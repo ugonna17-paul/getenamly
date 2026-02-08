@@ -12,7 +12,7 @@ export default function DemoSuccessModal() {
 
             setTimeout(() => {
                 window.location.href =
-                    "https://api.leadconnectorhq.com/widget/booking/1h1TnZAqL8pc6qC19HtS";
+                    "https://api.leadconnectorhq.com/widget/booking/iPJNvfxz8pdianTAmAu2";
             }, 3000);
         }
     }, []);
