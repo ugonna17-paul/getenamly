@@ -1,0 +1,231 @@
+/* ===== WRAPPER ===== */
+
+.how-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    padding: 80px 60px;
+    /* adds space from edges */
+}
+
+/* ===== LEFT TEXT SIDE ===== */
+
+.how-left {
+    padding-right: 20px;
+    /* breathing space from right side */
+}
+
+.how-left h2 {
+    font-size: 46px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.how-left span {
+    color: #14b8a6;
+}
+
+.contact {
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.desc {
+    max-width: 520px;
+    color: #334155;
+    line-height: 1.6;
+    margin-bottom: 22px;
+}
+
+.demo-btn {
+    background: #14b8a6;
+    color: white;
+    border: none;
+    padding: 16px 28px;
+    border-radius: 32px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: .25s;
+}
+
+.demo-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(20, 184, 166, .3);
+}
+
+/* ===== RIGHT CONTAINER ===== */
+
+.how-box {
+    background: #f1f5f9;
+    padding: 28px;
+    border-radius: 24px;
+    display: grid;
+    gap: 18px;
+    /* tighter spacing */
+}
+
+/* STEP CARDS */
+
+.how-step {
+    background: white;
+    padding: 18px 22px;
+    /* reduced height */
+    border-radius: 18px;
+
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    /* fixed icon column */
+    align-items: center;
+    gap: 12px;
+
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+    transition: .25s ease;
+}
+
+.how-step:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+/* RIGHT WRAP */
+
+.how-right {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* TITLE */
+.how-right-titles {
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 600;
+    color: #0f172a;
+    padding: 10px 22px;
+    border-radius: 999px;
+    background: #e6f7f5;
+    border: 1px solid rgba(20, 184, 166, 0.35);
+    margin-bottom: 24px;
+}
+
+/* ===== ICON BOX ===== */
+.icon-circle {
+    background: #14b8a6;
+    width: 54px;
+    height: 54px;
+    border-radius: 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto;
+    /* centers inside grid column */
+}
+
+.icon-circle svg {
+    width: 24px;
+    height: 24px;
+    color: white;
+}
+
+/* ===== STEP TEXT ===== */
+
+.how-step p {
+    margin: 0;
+    font-size: 18px;
+    color: #0f172a;
+    line-height: 1.35;
+}
+
+
+/* ===== MODAL ===== */
+
+/* Overlay */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    padding: 20px;
+}
+
+.modal {
+    background: #fff;
+    border-radius: 18px;
+    width: 100%;
+    max-width: 900px;
+    position: relative;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
+    animation: modalFade 0.25s ease;
+    overflow: hidden;
+}
+
+/* Video */
+.modal video {
+    width: 100%;
+    aspect-ratio: 16/9;
+    display: block;
+    background: #000;
+    position: relative;
+    z-index: 1;
+}
+
+/* Close button (bring to front) */
+.close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 6px;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    z-index: 10;
+    /* KEY FIX */
+    transition: 0.2s;
+}
+
+
+.close:hover {
+    background: #000;
+    transform: scale(1.1);
+}
+
+/* Smooth pop-in */
+@keyframes modalFade {
+    from {
+        opacity: 0;
+        transform: scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* ===== MOBILE ===== */
+
+@media (max-width: 900px) {
+    .how-wrap {
+        grid-template-columns: 1fr;
+        padding: 60px 24px;
+    }
+
+    .how-left {
+        padding-right: 0;
+    }
+
+    .how-left h2 {
+        font-size: 34px;
+    }
+}
