@@ -3,23 +3,25 @@
 .how-wrap {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 40px;
+    gap: 48px;
     align-items: center;
-    padding: 80px 60px;
-    /* adds space from edges */
+    padding: 80px 24px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 /* ===== LEFT TEXT SIDE ===== */
 
 .how-left {
     padding-right: 20px;
-    /* breathing space from right side */
 }
 
 .how-left h2 {
-    font-size: 46px;
-    line-height: 1.1;
+    font-size: clamp(1.75rem, 3vw, 2.6rem);
+    line-height: 1.15;
     margin-bottom: 20px;
+    font-weight: 700;
+    color: #0f172a;
 }
 
 .how-left span {
@@ -29,63 +31,50 @@
 .contact {
     font-weight: 600;
     margin-bottom: 12px;
+    color: #0f172a;
+    font-size: 16px;
 }
 
 .desc {
     max-width: 520px;
-    color: #334155;
-    line-height: 1.6;
-    margin-bottom: 22px;
-}
-
-.demo-btn {
-    background: #14b8a6;
-    color: white;
-    border: none;
-    padding: 16px 28px;
-    border-radius: 32px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: .25s;
-}
-
-.demo-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(20, 184, 166, .3);
+    color: #64748b;
+    line-height: 1.65;
+    margin-bottom: 24px;
+    font-size: 15px;
 }
 
 /* ===== RIGHT CONTAINER ===== */
 
 .how-box {
-    background: #f1f5f9;
+    background: #f8fafb;
     padding: 28px;
-    border-radius: 24px;
+    border-radius: 20px;
     display: grid;
-    gap: 18px;
-    /* tighter spacing */
+    gap: 16px;
+    border: 1px solid #e5eaee;
 }
 
 /* STEP CARDS */
 
 .how-step {
     background: white;
-    padding: 18px 22px;
-    /* reduced height */
-    border-radius: 18px;
+    padding: 20px 24px;
+    border-radius: 14px;
 
     display: grid;
-    grid-template-columns: 70px 1fr;
-    /* fixed icon column */
+    grid-template-columns: 60px 1fr;
     align-items: center;
-    gap: 12px;
+    gap: 14px;
 
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
-    transition: .25s ease;
+    border: 1px solid #f1f5f9;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    transition: all 0.25s ease;
 }
 
 .how-step:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    border-color: rgba(20, 184, 166, 0.2);
 }
 
 /* RIGHT WRAP */
@@ -99,34 +88,35 @@
 /* TITLE */
 .how-right-titles {
     display: inline-block;
-    font-size: 18px;
+    font-size: 13px;
     font-weight: 600;
-    color: #0f172a;
-    padding: 10px 22px;
+    color: #0d9488;
+    padding: 8px 18px;
     border-radius: 999px;
-    background: #e6f7f5;
-    border: 1px solid rgba(20, 184, 166, 0.35);
-    margin-bottom: 24px;
+    background: rgba(20, 184, 166, 0.1);
+    border: 1px solid rgba(20, 184, 166, 0.25);
+    margin-bottom: 20px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
 }
 
 /* ===== ICON BOX ===== */
 .icon-circle {
-    background: #14b8a6;
-    width: 54px;
-    height: 54px;
-    border-radius: 14px;
+    background: linear-gradient(135deg, #14b8a6, #0d9488);
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
     margin: 0 auto;
-    /* centers inside grid column */
 }
 
 .icon-circle svg {
-    width: 24px;
-    height: 24px;
+    width: 22px;
+    height: 22px;
     color: white;
 }
 
@@ -134,9 +124,10 @@
 
 .how-step p {
     margin: 0;
-    font-size: 18px;
+    font-size: 16px;
     color: #0f172a;
-    line-height: 1.35;
+    line-height: 1.4;
+    font-weight: 500;
 }
 
 
@@ -218,14 +209,21 @@
 @media (max-width: 900px) {
     .how-wrap {
         grid-template-columns: 1fr;
-        padding: 60px 24px;
+        padding: 48px 20px;
+        gap: 32px;
     }
 
     .how-left {
         padding-right: 0;
+        text-align: center;
     }
 
     .how-left h2 {
-        font-size: 34px;
+        font-size: 1.5rem;
+    }
+
+    .desc {
+        margin-left: auto;
+        margin-right: auto;
     }
 }

@@ -75,7 +75,7 @@ export default function App() {
           {/* RIGHT CTA */}
           <button
             className="cta primary"
-            onClick={() => scrollTo("hero-section")}
+            onClick={() => scrollTo("book-demo")}
           >
             Book a Demo
           </button>
@@ -99,7 +99,7 @@ export default function App() {
                 Features
               </button>
 
-              <button onClick={() => scrollTo("why-us")} className="mobile-link">
+              <button onClick={() => scrollTo("founder")} className="mobile-link">
                 Why Choose Us
               </button>
 
@@ -109,7 +109,7 @@ export default function App() {
 
               <button
                 className="cta primary block"
-                onClick={() => scrollTo("hero-section")}
+                onClick={() => scrollTo("book-demo")}
               >
                 Book a Demo
               </button>
@@ -121,6 +121,7 @@ export default function App() {
 
 
       <main>
+        <div className="hero-wrapper">
         <section className="hero" id="hero-section">
 
           {/* TEXT SIDE */}
@@ -128,8 +129,7 @@ export default function App() {
             <span className="hero-mini">Book A Demo</span>
 
             <h2 className="hero-title">
-              Turn Missed Calls Into New <br />
-              Patients On Autopilot
+              Turn Missed Calls Into <span className="hero-accent">New Patients</span> On Autopilot
             </h2>
 
             <div className="hero-checks">
@@ -154,35 +154,58 @@ export default function App() {
         </section>
 
 
-        <div className='book-form'>
-          <h2>Book A <span style={{color: "#1cc7c1"}}>Demo</span></h2>
+        <div className='book-form' id="book-demo">
+          <div className='book-form-inner'>
+          <h2>Book A <span className="teal">Demo</span></h2>
           <iframe
             src="https://api.leadconnectorhq.com/widget/form/RUliCXLKWBUPfwStp6h1"
             style={{
               width: "100%",
-              height: "500px",
+              height: "390px",
               border: "none",
-              borderRadius: "20px"
+              borderRadius: "12px"
             }}
             title="GetEnamly Demo Form"
           />
+          </div>
+        </div>
         </div>
 
         {/* support section */}
 
         <section className="support-section">
+          <div className="support-inner">
+          <h3>Trusted Integrations</h3>
+          <h2>Works With Your Practice Management System</h2>
           <div className="support-logos">
             <div className="logo-pill">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSl4_CuuFaVER8Nnh_4C0yVIiX3GxOT5bvUDg&s" alt="Integration 1" />
+              <img src="https://1000logos.net/wp-content/uploads/2021/04/Dentrix-logo.png" alt="Dentrix" />
             </div>
 
             <div className="logo-pill">
-              <img src="https://1000logos.net/wp-content/uploads/2021/04/Dentrix-logo.png" alt="Integration 2" />
+              <svg viewBox="0 0 220 40" className="pms-logo" aria-label="Open Dental">
+                <text x="110" y="28" textAnchor="middle" fontFamily="Inter, system-ui, sans-serif" fontSize="22" fontWeight="700"><tspan fill="#2563eb">Open</tspan><tspan fill="#1e40af"> Dental</tspan></text>
+              </svg>
             </div>
 
             <div className="logo-pill">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7J-f7RjRWB55L3Al8wDH0g9xCQ5TDh9dvtw&s" alt="Integration 3" />
+              <svg viewBox="0 0 200 40" className="pms-logo" aria-label="Eaglesoft">
+                <text x="100" y="28" textAnchor="middle" fontFamily="Inter, system-ui, sans-serif" fontSize="24" fontWeight="700" fill="#1e3a5f">Eaglesoft</text>
+              </svg>
             </div>
+
+            <div className="logo-pill">
+              <svg viewBox="0 0 200 40" className="pms-logo" aria-label="Curve Hero">
+                <text x="100" y="28" textAnchor="middle" fontFamily="Inter, system-ui, sans-serif" fontSize="22" fontWeight="700"><tspan fill="#e85d26">Curve</tspan><tspan fill="#4a4a4a"> Hero</tspan></text>
+              </svg>
+            </div>
+
+            <div className="logo-pill">
+              <svg viewBox="0 0 180 40" className="pms-logo" aria-label="Cloud 9">
+                <text x="90" y="28" textAnchor="middle" fontFamily="Inter, system-ui, sans-serif" fontSize="22" fontWeight="700"><tspan fill="#0ea5e9">Cloud</tspan><tspan fill="#6366f1">9</tspan></text>
+              </svg>
+            </div>
+          </div>
           </div>
         </section>
 
@@ -280,9 +303,9 @@ export default function App() {
               <button
                 className="demo-btn"
                 onClick={() => {
-                  const el = document.getElementById("hero-section");
+                  const el = document.getElementById("book-demo");
 
-                  const offset = 130; // adjust this number
+                  const offset = 130;
                   const y =
                     el.getBoundingClientRect().top +
                     window.pageYOffset -

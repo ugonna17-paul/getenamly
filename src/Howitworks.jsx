@@ -71,6 +71,8 @@ export default function HowItWorks() {
                         <video
                             src="https://res.cloudinary.com/ugocode/video/upload/v1770576853/Updated_final_1_jwdbcy.mp4"
                             controls
+                            autoPlay
+                            playsInline
                             poster="/thumbnail.jpg"
                         />
 

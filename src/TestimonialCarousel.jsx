@@ -126,7 +126,7 @@ export default function TestimonialCarousel() {
                                 <button
                                     className="demo-btn"
                                     onClick={() => {
-                                        const el = document.getElementById("hero-section");
+                                        const el = document.getElementById("book-demo");
                                         const y =
                                             el.getBoundingClientRect().top +
                                             window.pageYOffset - 130;

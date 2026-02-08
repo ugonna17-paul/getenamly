@@ -1,31 +1,36 @@
 .footer {
-    background: #1fa5a5;
+    background: linear-gradient(135deg, #0f766e, #0d9488);
     color: white;
-    font-family: system-ui;
+    font-family: Inter, system-ui, -apple-system, sans-serif;
 }
 
 .footer-inner {
-    max-width: 1200px;
-    margin: auto;
-    padding: 50px 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 56px 24px;
     display: flex;
     justify-content: space-between;
-    gap: 40px;
+    gap: 48px;
 }
 
 /* LEFT */
 
 .footer-left {
-    max-width: 380px;
+    max-width: 360px;
 }
 
 .brand-row {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    /* background-color: #08928a; */
     width: 100%;
-    padding: 40px 0;
+    padding: 20px 0;
+}
+
+.brand-row img {
+    max-width: 180px;
+    height: auto;
+    object-fit: contain;
 }
 
 
@@ -112,29 +117,28 @@
     gap: 16px;
 }
 
-/* Dark circle */
+/* Social buttons */
 .social-btn {
-    width: 50px;
-    height: 50px;
+    width: 42px;
+    height: 42px;
     border-radius: 50%;
-    background: #14b8a6;
-    /* dark navy */
+    background: rgba(255, 255, 255, 0.15);
 
     display: flex;
     align-items: center;
     justify-content: center;
 
     color: white;
-    font-size: 22px;
+    font-size: 18px;
 
-    transition: 0.25s ease;
+    transition: all 0.25s ease;
     text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* Hover effect */
 .social-btn:hover {
-    background: #08928a;
-    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
 }
 
 
@@ -143,17 +147,24 @@
 /* BOTTOM */
 
 .footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, .4);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
     text-align: center;
-    padding: 18px;
-    font-size: 14px;
-    opacity: .9;
+    padding: 20px 24px;
+    font-size: 13px;
+    opacity: 0.85;
+    letter-spacing: 0.01em;
 }
 
 /* RESPONSIVE */
 
-@media(max-width:900px) {
+@media (max-width: 900px) {
     .footer-inner {
         flex-direction: column;
+        gap: 36px;
+        padding: 40px 20px;
+    }
+
+    .brand-row img {
+        max-width: 160px;
     }
 }

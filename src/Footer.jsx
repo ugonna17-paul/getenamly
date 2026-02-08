@@ -7,6 +7,14 @@ import { SiTiktok } from "react-icons/si";
 import enam from '../src/assets/hippa compliant.png'
 
 export default function Footer() {
+    const scrollTo = (id) => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        const offset = 120;
+        const y = el.getBoundingClientRect().top + window.pageYOffset - offset;
+        window.scrollTo({ top: y, behavior: "smooth" });
+    };
+
     return (
         <footer className="footer">
 
@@ -23,7 +31,6 @@ export default function Footer() {
 
                         <div className="hipaa">
                             <img src={enam} alt="HIPAA" />
-                            {/* <span>HIPAA<br />COMPLIANT</span> */}
                         </div>
                     </div>
 
@@ -36,10 +43,9 @@ export default function Footer() {
                 {/* CENTER */}
                 <div className="footer-links">
                     <h3>Quick Links</h3>
-                    <a href="#">How It Works</a>
-                    <a href="#">Why Choose us</a>
-                    <a href="#">ROI Calculator</a>
-                    <a href="#">FAQs</a>
+                    <a href="#features" onClick={(e) => { e.preventDefault(); scrollTo("features"); }}>Features</a>
+                    <a href="#founder" onClick={(e) => { e.preventDefault(); scrollTo("founder"); }}>Why Choose Us</a>
+                    <a href="#how-it-works" onClick={(e) => { e.preventDefault(); scrollTo("how-it-works"); }}>How It Works</a>
                 </div>
 
                 {/* RIGHT */}
@@ -48,7 +54,7 @@ export default function Footer() {
 
                     <div className="email">
                         <Mail size={18} />
-                        <span>info@getenamly.com</span>
+                        <a href="mailto:support@enamly.ai" style={{ color: 'white', textDecoration: 'none' }}>support@enamly.ai</a>
                     </div>
 
                     <div className="socials">
@@ -78,7 +84,7 @@ export default function Footer() {
 
             {/* BOTTOM BAR */}
             <div className="footer-bottom">
-                Copyright © 2025 enamly, All rights reserved.
+                Copyright © 2026 enamly, All rights reserved.
             </div>
 
         </footer>
