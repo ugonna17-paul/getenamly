@@ -84,6 +84,10 @@ export default function Footer() {
 
             {/* BOTTOM BAR */}
             <div className="footer-bottom">
+                <div style={{ marginBottom: '8px' }}>
+                    <a href="/privacy-policy" style={{ color: '#94a3b8', textDecoration: 'none', fontSize: '13px', marginRight: '16px' }}>Privacy Policy</a>
+                    <a href="/terms-and-conditions" style={{ color: '#94a3b8', textDecoration: 'none', fontSize: '13px' }}>Terms &amp; Conditions</a>
+                </div>
                 Copyright © 2026 enamly, All rights reserved.
             </div>
 

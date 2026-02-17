@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import './App.css';
+import './Legal.css';
 
 import {
   Check,
@@ -65,6 +66,13 @@ export default function App() {
 
             <button
               className="nav-link"
+              onClick={() => scrollTo("real-results")}
+            >
+              Real Results
+            </button>
+
+            <button
+              className="nav-link"
               onClick={() => scrollTo("how-it-works")}
             >
               How it Works
@@ -101,6 +109,10 @@ export default function App() {
 
               <button onClick={() => scrollTo("founder")} className="mobile-link">
                 Why Choose Us
+              </button>
+
+              <button onClick={() => scrollTo("real-results")} className="mobile-link">
+                Real Results
               </button>
 
               <button onClick={() => scrollTo("how-it-works")} className="mobile-link">
@@ -157,55 +169,65 @@ export default function App() {
         <div className='book-form' id="book-demo">
           <div className='book-form-inner'>
           <h2>Book A <span className="teal">Demo</span></h2>
+          <p className="book-form-sub">Fill out the form below and we'll get you scheduled.</p>
           <iframe
-            src="https://api.leadconnectorhq.com/widget/form/RUliCXLKWBUPfwStp6h1"
+            src="https://link.apisystem.tech/widget/form/Kw3nQ2ZYmngKS06aDVNA"
             style={{
               width: "100%",
-              height: "390px",
+              height: "450px",
               border: "none",
               borderRadius: "12px"
             }}
             title="GetEnamly Demo Form"
           />
+
+          {/* A2P Consent Checkboxes */}
+          <div className="consent-section">
+            <label className="consent-label">
+              <input type="checkbox" />
+              <span>
+                I Consent to Receive SMS Notifications and Alerts from Enamly Inc. Message frequency varies. Message &amp; data rates may apply. Text HELP to 346-637-2352 for assistance. You can reply STOP to unsubscribe at any time.
+              </span>
+            </label>
+            <label className="consent-label">
+              <input type="checkbox" />
+              <span>
+                By checking this box I agree to receive occasional marketing messages from Enamly Inc. Message frequency varies. Message &amp; data rates may apply. Text HELP to 346-637-2352 for assistance. You can reply STOP to unsubscribe at any time.
+              </span>
+            </label>
+            <div className="consent-legal-links">
+              <a href="/privacy-policy">Privacy Policy</a>
+              <span className="separator">|</span>
+              <a href="/terms-and-conditions">Terms &amp; Conditions</a>
+            </div>
+          </div>
           </div>
         </div>
         </div>
 
-        {/* support section */}
+        {/* HOW IT WORKS — right after Book a Demo */}
+        <HowItWorks />
 
-        <section className="support-section">
-          <div className="support-inner">
-          <h3>Trusted Integrations</h3>
-          <h2>Works With Your Practice Management System</h2>
-          <div className="support-logos">
-            <div className="logo-pill">
-              <img src="https://1000logos.net/wp-content/uploads/2021/04/Dentrix-logo.png" alt="Dentrix" />
+        {/* SCROLLING PMS LOGO STRIP */}
+        <section className="pms-strip">
+          <p className="pms-strip-label">WORKS WITH YOUR PRACTICE MANAGEMENT SYSTEM</p>
+          <div className="pms-strip-track">
+            <div className="pms-strip-scroll">
+              {/* First set */}
+              <img src="https://enamly.ai/images/pms/dentrix.svg" alt="Dentrix" />
+              <img src="https://enamly.ai/images/pms/open-dental.svg" alt="Open Dental" />
+              <img src="https://enamly.ai/images/pms/eaglesoft.svg" alt="Eaglesoft" />
+              <img src="https://enamly.ai/images/pms/curve.svg" alt="Curve Hero" />
+              <img src="https://enamly.ai/images/pms/cloud9.svg" alt="Cloud9" />
+              <img src="https://enamly.ai/images/pms/dentrix-ascend.svg" alt="Dentrix Ascend" />
+              {/* Duplicate for seamless loop */}
+              <img src="https://enamly.ai/images/pms/dentrix.svg" alt="Dentrix" />
+              <img src="https://enamly.ai/images/pms/open-dental.svg" alt="Open Dental" />
+              <img src="https://enamly.ai/images/pms/eaglesoft.svg" alt="Eaglesoft" />
+              <img src="https://enamly.ai/images/pms/curve.svg" alt="Curve Hero" />
+              <img src="https://enamly.ai/images/pms/cloud9.svg" alt="Cloud9" />
+              <img src="https://enamly.ai/images/pms/dentrix-ascend.svg" alt="Dentrix Ascend" />
             </div>
-
-            <div className="logo-pill">
-              <svg viewBox="0 0 220 40" className="pms-logo" aria-label="Open Dental">
-                <text x="110" y="28" textAnchor="middle" fontFamily="Inter, system-ui, sans-serif" fontSize="22" fontWeight="700"><tspan fill="#2563eb">Open</tspan><tspan fill="#1e40af"> Dental</tspan></text>
-              </svg>
-            </div>
-
-            <div className="logo-pill">
-              <svg viewBox="0 0 200 40" className="pms-logo" aria-label="Eaglesoft">
-                <text x="100" y="28" textAnchor="middle" fontFamily="Inter, system-ui, sans-serif" fontSize="24" fontWeight="700" fill="#1e3a5f">Eaglesoft</text>
-              </svg>
-            </div>
-
-            <div className="logo-pill">
-              <svg viewBox="0 0 200 40" className="pms-logo" aria-label="Curve Hero">
-                <text x="100" y="28" textAnchor="middle" fontFamily="Inter, system-ui, sans-serif" fontSize="22" fontWeight="700"><tspan fill="#e85d26">Curve</tspan><tspan fill="#4a4a4a"> Hero</tspan></text>
-              </svg>
-            </div>
-
-            <div className="logo-pill">
-              <svg viewBox="0 0 180 40" className="pms-logo" aria-label="Cloud 9">
-                <text x="90" y="28" textAnchor="middle" fontFamily="Inter, system-ui, sans-serif" fontSize="22" fontWeight="700"><tspan fill="#0ea5e9">Cloud</tspan><tspan fill="#6366f1">9</tspan></text>
-              </svg>
-            </div>
-          </div>
           </div>
         </section>
 
@@ -217,13 +239,11 @@ export default function App() {
 
         <TestimonialCarousel />
 
-        {/* HOW IT WORKS */}
-        <HowItWorks />
-
 
         {/* RESULTS */}
         <section className="container results" data-aos="fade-up">
           <h2 className="results-title">Real Results From Practices Like Yours</h2>
+          <p className="results-subtitle">Measurable impact from day one — here's what Enamly delivers.</p>
 
           <div className="results-grid">
             <div className="stat-card">
