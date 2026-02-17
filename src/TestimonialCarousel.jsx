@@ -107,7 +107,11 @@ export default function TestimonialCarousel() {
     }, [transition]);
 
     return (
-        <section className="testimonial-section">
+        <section className="testimonial-section" id="real-results">
+            <div className="testimonial-header">
+                <h2>Hear From Real Practices</h2>
+                <p>Real results from dental practices that switched to Enamly.</p>
+            </div>
             <div className="carousel">
 
                 <div

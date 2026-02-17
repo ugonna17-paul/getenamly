@@ -1,16 +1,33 @@
 .footer {
-    background: linear-gradient(135deg, #0f766e, #0d9488);
+    background: linear-gradient(160deg, #064e3b 0%, #0f766e 50%, #0d9488 100%);
     color: white;
-    font-family: Inter, system-ui, -apple-system, sans-serif;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle pattern overlay */
+.footer::before {
+    content: '';
+    position: absolute;
+    top: -200px;
+    right: -200px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(255,255,255,.04) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
 }
 
 .footer-inner {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 56px 24px;
+    padding: 72px 32px;
     display: flex;
     justify-content: space-between;
-    gap: 48px;
+    gap: 56px;
+    position: relative;
+    z-index: 1;
 }
 
 /* LEFT */
@@ -24,24 +41,14 @@
     align-items: center;
     justify-content: flex-start;
     width: 100%;
-    padding: 20px 0;
+    padding: 16px 0;
 }
 
 .brand-row img {
-    max-width: 180px;
+    max-width: 170px;
     height: auto;
     object-fit: contain;
 }
-
-
-/* LOGO */
-/* .brand-row img {
-    width: 260px;  
-    height: auto;
-    object-fit: contain;
-} */
-
-
 
 /* Brand text */
 .brand-text {
@@ -49,21 +56,15 @@
     font-weight: 500;
 }
 
-
 .footer-logo {
     width: 60px;
-}
-
-.brand-text {
-    font-size: 40px;
-    font-weight: 500;
 }
 
 .tag-row {
     display: flex;
     align-items: center;
-    gap: 30px;
-    margin: 20px 0;
+    gap: 24px;
+    margin: 16px 0;
     opacity: .95;
 }
 
@@ -76,19 +77,26 @@
 
 .hipaa img {
     width: 100px;
+    opacity: .9;
 }
 
 .footer-desc {
-    margin-top: 15px;
-    line-height: 1.6;
-    opacity: .95;
+    margin-top: 12px;
+    line-height: 1.7;
+    opacity: .85;
+    font-size: 15px;
 }
 
 /* LINKS */
 
 .footer-links h3,
 .footer-contact h3 {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    opacity: .9;
 }
 
 .footer-links a {
@@ -96,11 +104,15 @@
     margin: 10px 0;
     text-decoration: none;
     color: white;
-    opacity: .95;
+    opacity: .8;
+    font-size: 15px;
+    transition: all var(--dur) var(--ease);
+    padding: 2px 0;
 }
 
 .footer-links a:hover {
     opacity: 1;
+    transform: translateX(4px);
 }
 
 /* CONTACT */
@@ -109,50 +121,52 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
+    opacity: .9;
+}
+
+.email a {
+    font-size: 15px;
 }
 
 .socials {
     display: flex;
-    gap: 16px;
+    gap: 12px;
 }
 
 /* Social buttons */
 .social-btn {
     width: 42px;
     height: 42px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.15);
-
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.1);
     display: flex;
     align-items: center;
     justify-content: center;
-
     color: white;
     font-size: 18px;
-
-    transition: all 0.25s ease;
+    transition: all var(--dur) var(--ease);
     text-decoration: none;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(4px);
 }
 
 .social-btn:hover {
-    background: rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.2);
     transform: translateY(-2px);
+    border-color: rgba(255,255,255,.3);
 }
-
-
-
 
 /* BOTTOM */
 
 .footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
     text-align: center;
-    padding: 20px 24px;
+    padding: 24px 24px;
     font-size: 13px;
-    opacity: 0.85;
-    letter-spacing: 0.01em;
+    opacity: 0.7;
+    letter-spacing: .01em;
+    font-weight: 500;
 }
 
 /* RESPONSIVE */
@@ -160,11 +174,11 @@
 @media (max-width: 900px) {
     .footer-inner {
         flex-direction: column;
-        gap: 36px;
-        padding: 40px 20px;
+        gap: 40px;
+        padding: 56px 24px;
     }
 
     .brand-row img {
-        max-width: 160px;
+        max-width: 150px;
     }
 }

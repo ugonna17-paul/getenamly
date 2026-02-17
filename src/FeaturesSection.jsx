@@ -49,6 +49,10 @@ const FeaturesSection = () => {
                 Features and <span>Integrations</span>
             </h2>
 
+            <p className="features-subtitle">
+                Everything your practice needs to capture leads, book patients, and streamline operations — powered by AI.
+            </p>
+
             <div className="features-grid">
 
                 {cards.map((card, i) => (

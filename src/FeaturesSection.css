@@ -1,42 +1,55 @@
 .features {
-    padding: 80px 24px;
-    max-width: 1200px;
+    padding: var(--section-py) 24px;
+    max-width: 1240px;
     margin: 0 auto;
     text-align: center;
 }
 
 .features-title {
-    font-size: 2rem;
-    font-weight: 700;
-    margin-bottom: 48px;
-    color: #0f172a;
+    font-size: clamp(1.75rem, 3.2vw, 2.75rem);
+    font-weight: 800;
+    margin-bottom: 16px;
+    color: var(--color-heading);
+    letter-spacing: -.025em;
 }
 
 .features-title span {
-    color: #14b8a6;
+    background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary-dark));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.features-subtitle {
+    font-size: 17px;
+    color: var(--color-text-light);
+    max-width: 520px;
+    margin: 0 auto 56px;
+    line-height: 1.7;
 }
 
 /* GRID */
 .features-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
+    gap: 20px;
 }
 
 /* CARD */
 .feature-card {
-    background: white;
-    border-radius: 18px;
-    border: 1px solid #e5eaee;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
-    transition: all 0.3s ease;
+    background: var(--color-bg);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-xs);
+    transition: all var(--dur-slow) var(--ease);
     overflow: hidden;
+    text-align: left;
 }
 
 .feature-card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
-    border-color: rgba(20, 184, 166, 0.3);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-primary-border);
 }
 
 /* IMAGE INNER SPACING */
@@ -46,28 +59,33 @@
 
 .img-wrap img {
     width: 100%;
-    height: 200px;
+    height: 210px;
     object-fit: cover;
-    border-radius: 12px;
-    background: #f1f5f9;
+    border-radius: var(--radius-md);
+    background: var(--color-bg-section);
+    transition: transform var(--dur-slow) var(--ease);
+}
+
+.feature-card:hover .img-wrap img {
+    transform: scale(1.03);
 }
 
 /* CONTENT */
 .feature-content {
-    padding: 20px;
-    text-align: left;
+    padding: 22px 22px 26px;
 }
 
 .feature-content h3 {
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 700;
     margin-bottom: 8px;
-    color: #0f172a;
+    color: var(--color-heading);
+    letter-spacing: -.01em;
 }
 
 .feature-content p {
-    color: #64748b;
-    line-height: 1.6;
+    color: var(--color-text-light);
+    line-height: 1.65;
     font-size: 14px;
 }
 
@@ -76,9 +94,8 @@
     .features-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-
     .features {
-        padding: 60px 20px;
+        padding: var(--section-py-mobile) 20px;
     }
 }
 
@@ -86,15 +103,16 @@
 @media (max-width: 600px) {
     .features-grid {
         grid-template-columns: 1fr;
-        max-width: 400px;
+        max-width: 420px;
         margin: 0 auto;
     }
-
     .features-title {
         font-size: 1.5rem;
     }
-
     .features {
-        padding: 48px 16px;
+        padding: 56px 16px;
+    }
+    .features-subtitle {
+        margin-bottom: 40px;
     }
 }

@@ -1,0 +1,113 @@
+.thankyou-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(175deg, #f0fdf9 0%, #f0f9ff 40%, var(--color-bg-subtle) 100%);
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.thankyou-page::before {
+  content: '';
+  position: absolute;
+  top: -200px;
+  right: -150px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(20,184,166,.07) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.thankyou-card {
+  text-align: center;
+  max-width: 480px;
+  width: 100%;
+  background: var(--color-bg);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--color-border);
+  padding: 56px 40px;
+  position: relative;
+  animation: thankYouFade .5s var(--ease-out);
+}
+
+.thankyou-logo {
+  height: 40px;
+  margin: 0 auto 32px;
+}
+
+.thankyou-icon {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 24px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary-dark));
+  color: white;
+  font-size: 34px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(13,148,136,.25);
+  animation: thankYouBounce .6s var(--ease-spring) .2s both;
+}
+
+.thankyou-card h1 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 800;
+  color: var(--color-heading);
+  letter-spacing: -.02em;
+  margin-bottom: 12px;
+}
+
+.thankyou-card h1 span {
+  background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary-dark));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.thankyou-msg {
+  font-size: 16px;
+  color: var(--color-text-light);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.thankyou-redirect {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  margin-bottom: 28px;
+  font-weight: 500;
+}
+
+.thankyou-card .demo-btn {
+  width: 100%;
+  justify-content: center;
+}
+
+@keyframes thankYouFade {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes thankYouBounce {
+  0% { transform: scale(.4); opacity: 0; }
+  70% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+@media (max-width: 600px) {
+  .thankyou-card {
+    padding: 40px 24px;
+  }
+}
