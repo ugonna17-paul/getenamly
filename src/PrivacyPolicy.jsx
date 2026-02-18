@@ -32,7 +32,7 @@ export default function PrivacyPolicy() {
           Enamly Inc. ("Enamly," "we," "us," or "our") provides AI-powered
           virtual receptionist services for dental practices. Our registered
           business address is in the United States. You can reach us at{" "}
-          <a href="mailto:support@enamly.ai">support@enamly.ai</a> or by phone
+          <a href="mailto:team@getenamly.com">team@getenamly.com</a> or by phone
           at <a href="tel:3466372352">(346) 637-2352</a>.
         </p>
 
@@ -104,7 +104,7 @@ export default function PrivacyPolicy() {
         <p>
           <strong>For help:</strong> Reply <strong>HELP</strong> to any message
           or contact us at <a href="tel:3466372352">(346) 637-2352</a> or{" "}
-          <a href="mailto:support@enamly.ai">support@enamly.ai</a>.
+          <a href="mailto:team@getenamly.com">team@getenamly.com</a>.
         </p>
         <p>
           We do not sell, rent, or share your phone number or any information
@@ -171,7 +171,7 @@ export default function PrivacyPolicy() {
         </ul>
         <p>
           To exercise any of these rights, contact us at{" "}
-          <a href="mailto:support@enamly.ai">support@enamly.ai</a>.
+          <a href="mailto:team@getenamly.com">team@getenamly.com</a>.
         </p>
 
         <h2>10. Children's Privacy</h2>
@@ -195,7 +195,7 @@ export default function PrivacyPolicy() {
         <ul style={{ listStyle: "none", paddingLeft: 0 }}>
           <li>
             <strong>Email:</strong>{" "}
-            <a href="mailto:support@enamly.ai">support@enamly.ai</a>
+            <a href="mailto:team@getenamly.com">team@getenamly.com</a>
           </li>
           <li>
             <strong>Phone:</strong>{" "}

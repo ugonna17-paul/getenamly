@@ -54,7 +54,7 @@ export default function Footer() {
 
                     <div className="email">
                         <Mail size={18} />
-                        <a href="mailto:support@enamly.ai" style={{ color: 'white', textDecoration: 'none' }}>support@enamly.ai</a>
+                        <a href="mailto:team@getenamly.com" style={{ color: 'white', textDecoration: 'none' }}>team@getenamly.com</a>
                     </div>
 
                     <div className="socials">

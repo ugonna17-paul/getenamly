@@ -96,7 +96,7 @@ export default function TermsAndConditions() {
             <strong>Help:</strong> For assistance, reply <strong>HELP</strong>{" "}
             to any message, call{" "}
             <a href="tel:3466372352">(346) 637-2352</a>, or email{" "}
-            <a href="mailto:support@enamly.ai">support@enamly.ai</a>.
+            <a href="mailto:team@getenamly.com">team@getenamly.com</a>.
           </li>
           <li>
             <strong>Carrier liability:</strong> Carriers are not liable for
@@ -200,7 +200,7 @@ export default function TermsAndConditions() {
         <ul style={{ listStyle: "none", paddingLeft: 0 }}>
           <li>
             <strong>Email:</strong>{" "}
-            <a href="mailto:support@enamly.ai">support@enamly.ai</a>
+            <a href="mailto:team@getenamly.com">team@getenamly.com</a>
           </li>
           <li>
             <strong>Phone:</strong>{" "}
