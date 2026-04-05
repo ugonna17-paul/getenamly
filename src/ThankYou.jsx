@@ -8,6 +8,12 @@ export default function ThankYou() {
     const [countdown, setCountdown] = useState(8);
 
     useEffect(() => {
+        if (typeof window !== "undefined" && typeof window.fbq === "function") {
+            window.fbq("track", "CompleteRegistration");
+        }
+    }, []);
+
+    useEffect(() => {
         const timer = setInterval(() => {
             setCountdown(prev => {
                 if (prev <= 1) {

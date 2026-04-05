@@ -65,7 +65,7 @@ const FeaturesSection = () => {
 
                         {/* IMAGE WRAP FOR INNER SPACE */}
                         <div className="img-wrap">
-                            <img src={card.img} alt={card.title} />
+                            <img src={card.img} alt={card.title} loading="lazy" />
                         </div>
 
                         <div className="feature-content">

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import './App.css';
@@ -16,6 +16,45 @@ import HowItWorks from './Howitworks';
 import DemoSuccessModal from './DemoSuccessModal';
 import FeaturesSection from './FeaturesSection';
 
+function LazyYouTube({ url, title, className }) {
+  const [loaded, setLoaded] = React.useState(false);
+  const videoId = url.match(/\/embed\/([^?&]+)/)?.[1] || "";
+
+  if (loaded) {
+    return (
+      <iframe
+        src={`${url}?autoplay=1`}
+        title={title}
+        allowFullScreen
+        className={className}
+        style={{ border: "none" }}
+        loading="lazy"
+      />
+    );
+  }
+
+  return (
+    <button
+      onClick={() => setLoaded(true)}
+      className={className}
+      style={{ position: "relative", cursor: "pointer", background: "#000", border: "none", padding: 0 }}
+      aria-label={`Play ${title}`}
+    >
+      <img
+        src={`https://img.youtube.com/vi/${videoId}/hqdefault.jpg`}
+        alt={title}
+        style={{ width: "100%", height: "100%", objectFit: "cover", opacity: 0.8 }}
+        loading="lazy"
+      />
+      <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center" }}>
+        <div style={{ width: 56, height: 56, borderRadius: "50%", backgroundColor: "#dc2626", display: "flex", alignItems: "center", justifyContent: "center" }}>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z" /></svg>
+        </div>
+      </div>
+    </button>
+  );
+}
+
 
 export default function App() {
   const [currentPMS, setCurrentPMS] = useState('');
@@ -23,6 +62,15 @@ export default function App() {
 
   useEffect(() => {
     AOS.init({ duration: 800, once: true, easing: 'ease-in-out' });
+  }, []);
+
+  useEffect(() => {
+    if (window.location.hash === '#book-demo' || window.location.pathname === '/demo') {
+      setTimeout(() => {
+        const el = document.getElementById('book-demo');
+        if (el) scrollTo('book-demo');
+      }, 300);
+    }
   }, []);
   const scrollTo = (id) => {
     const el = document.getElementById(id);
@@ -154,10 +202,9 @@ export default function App() {
 
           {/* VIDEO SIDE */}
           <div className="video-card">
-            <iframe
-              src="https://www.youtube.com/embed/u5zY4d5Hg-M"
+            <LazyYouTube
+              url="https://www.youtube.com/embed/u5zY4d5Hg-M"
               title="Demo"
-              allowFullScreen
             />
           </div>
 
@@ -171,7 +218,7 @@ export default function App() {
           <h2>Book A <span className="teal">Demo</span></h2>
           <p className="book-form-sub">Fill out the form below and we'll get you scheduled.</p>
           <iframe
-            src="https://link.apisystem.tech/widget/form/Kw3nQ2ZYmngKS06aDVNA"
+            src="https://api.leadconnectorhq.com/widget/form/Kw3nQ2ZYmngKS06aDVNA"
             style={{
               width: "100%",
               height: "450px",
@@ -315,6 +362,7 @@ export default function App() {
               <img
                 src="https://plum-pelican-648777.hostingersite.com/wp-content/uploads/2025/11/c-PersonalBethelOzumba__Premier009_1673539928982-1000x600-1.jpg"
                 alt="Dr Bethel Ozumba"
+                loading="lazy"
               />
 
               <h3>Dr. Bethel Ozumba, DDS</h3>

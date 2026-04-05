@@ -1,54 +1,98 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import {
     ChevronLeft,
     ChevronRight,
     BarChart3,
     BadgeCheck,
     Clock,
-    DollarSign
+    DollarSign,
+    TrendingUp
 } from "lucide-react";
 
 import "./Testimonial.css";
 
+function LazyYouTube({ url, title }) {
+    const [loaded, setLoaded] = useState(false);
+    const videoId = url.match(/\/embed\/([^?&]+)/)?.[1] || "";
+
+    if (loaded) {
+        return (
+            <iframe
+                src={`${url}?autoplay=1`}
+                title={title}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="testimonial-video-iframe"
+                style={{ border: "none" }}
+            />
+        );
+    }
+
+    return (
+        <button
+            onClick={() => setLoaded(true)}
+            className="testimonial-video-thumb"
+            aria-label={`Play ${title}`}
+        >
+            <img
+                src={`https://img.youtube.com/vi/${videoId}/hqdefault.jpg`}
+                alt={title}
+                loading="lazy"
+            />
+            <div className="testimonial-play-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z" /></svg>
+            </div>
+        </button>
+    );
+}
+
 const slides = [
     {
-        text: "After rolling out Enamly, missed calls dropped 78% and we save 3 hours a day on phones. it books directly in our PMS with clean summarizes, so those calls now turn into confirmed visits.",
+        text: "On the weekends and after hours, I was probably missing about 10 to 12 calls a week, which means that\u2019s 10 to 12 potential patients for your office. They would return those phone calls only to find out the patient has already scheduled at a different office. Now Enamly solves that problem.",
         author: "Dr. Loc Tong",
+        title: "Gentle Dentistry Tampa",
         img: "https://plum-pelican-648777.hostingersite.com/wp-content/uploads/2025/11/WhatsApp-Image-2025-11-11-at-11.39.35_73115547.jpg",
+        videoUrl: "https://www.youtube.com/embed/EhZu6L7RGjk",
         stats: [
-            { icon: <BadgeCheck />, title: "Results", desc: "+31 Bookings" },
-            { icon: <DollarSign />, title: "Impact", desc: "$168k" },
-            { icon: <BarChart3 />, title: "After Hours", desc: "+100%" }
+            { icon: <TrendingUp />, title: "Bookings", desc: "+21/mo" },
+            { icon: <DollarSign />, title: "Revenue Impact", desc: "$78k" },
+            { icon: <BarChart3 />, title: "After-Hours Answer", desc: "+100%" }
         ]
     },
     {
-        text: "The difference is outcomes: Enamly keeps our answer rate around 99%, cuts no-shows by 27%, and reduces time-to-book by 41%. It’s the first ‘AI’ that actually books, not just talks.",
-        author: "Dr. Justin Sanders — Sanders Dental Studio",
-        img: "https://plum-pelican-648777.hostingersite.com/wp-content/uploads/2025/11/WhatsApp-Image-2025-11-11-at-11.39.41_451997db.jpg",
+        text: "Before Enamly, I had a lot of missed calls, dropped calls, lost opportunity. Now I\u2019m able to follow people and track it. It frees up the front desk staff and allows you to track what they do. In dentistry, things are evolving and you need to use it.",
+        author: "Dr. John Bushrod",
+        title: "National Orthodontics & Pediatrics",
+        img: "/images/dr-bushrod.png",
+        videoUrl: "https://www.youtube.com/embed/L5t4KgIP-cA",
         stats: [
-            { icon: <BarChart3 />, title: "Answer Rate", desc: "99% Live Answer Coverage" },
-            { icon: <BadgeCheck />, title: "No-Shows", desc: "–27% Fewer No-Shows" },
-            { icon: <Clock />, title: "Time to Book", desc: "41% Faster Booking Time" }
+            { icon: <BarChart3 />, title: "Calls Captured", desc: "95%" },
+            { icon: <Clock />, title: "Staff Time Freed", desc: "~5 hrs/wk" },
+            { icon: <TrendingUp />, title: "Follow-Up Rate", desc: "100%" }
         ]
     },
     {
-        text: "We started unintegrated and saw an immediate lift in after-hours bookings. After integrating, new patient bookings up 35% and we reclaimed 8 hrs/weekly of front desk time.",
+        text: "When we reached out to patients later on, a lot of them were already booked at another office. It\u2019s very rare now that we lose any patient. At any moment you call, I\u2019m either going to pick up or Enamly is going to pick up. Every practice should go through a trial.",
         author: "Dr. Jonathan Rodney",
+        title: "Pure Dentistry, NYC",
         img: "https://plum-pelican-648777.hostingersite.com/wp-content/uploads/2025/11/WhatsApp-Image-2025-11-11-at-11.39.52_39aebe4a.jpg",
+        videoUrl: "https://www.youtube.com/embed/R5ak16dn1AU",
         stats: [
-            { icon: <BadgeCheck />, title: "Results", desc: "+35%" },
-            { icon: <Clock />, title: "Time Saved", desc: "8 hrs" },
-            { icon: <DollarSign />, title: "Impact", desc: "$118k" }
+            { icon: <BarChart3 />, title: "Answer Rate", desc: "100%" },
+            { icon: <BadgeCheck />, title: "Patients Lost", desc: "Near Zero" },
+            { icon: <TrendingUp />, title: "After-Hours Bookings", desc: "+18/mo" }
         ]
     },
     {
-        text: "We tried many AI receptionists but this one beats them all. No-shows down 23% and production up 17%. That translated to a 20% profit lift in the first quarter.",
-        author: "Maria Alvarez — Office Manager",
-        img: "https://plum-pelican-648777.hostingersite.com/wp-content/uploads/2025/11/13-1.jpg",
+        text: "Numbers are hard because I don\u2019t miss calls anymore. I got a two-year-old at home, wife at home. I\u2019m trying to get out of here, but I still want the practice to thrive. Enamly answered, got the info and I was like, this is not just a new patient, this is more than that.",
+        author: "Dr. Justin Sanders",
+        title: "Sanders Dental Studio",
+        img: "https://plum-pelican-648777.hostingersite.com/wp-content/uploads/2025/11/WhatsApp-Image-2025-11-11-at-11.39.41_451997db.jpg",
+        videoUrl: "https://www.youtube.com/embed/LnfTnzArxdY",
         stats: [
-            { icon: <BadgeCheck />, title: "No-Shows", desc: "–23% Missed" },
-            { icon: <BarChart3 />, title: "Production", desc: "+17% Growth" },
-            { icon: <DollarSign />, title: "Profit", desc: "+20% Lift" }
+            { icon: <BarChart3 />, title: "Answer Rate", desc: "100%" },
+            { icon: <Clock />, title: "After-Hours Coverage", desc: "24/7" },
+            { icon: <TrendingUp />, title: "Response Time", desc: "<1 min" }
         ]
     }
 ];
@@ -125,7 +169,7 @@ export default function TestimonialCarousel() {
                     {extended.map((s, i) => (
                         <div className="slide" key={i}>
                             <div className="left">
-                                <div className="quote">“</div>
+                                <div className="quote">"</div>
 
                                 <button
                                     className="demo-btn"
@@ -142,7 +186,14 @@ export default function TestimonialCarousel() {
                                 </button>
 
                                 <p className="text">{s.text}</p>
-                                <h4>{s.author}</h4>
+
+                                <div className="testimonial-author">
+                                    <img src={s.img} alt={s.author} className="author-avatar" loading="lazy" />
+                                    <div>
+                                        <h4>{s.author}</h4>
+                                        {s.title && <p className="author-title">{s.title}</p>}
+                                    </div>
+                                </div>
 
                                 <div className="stats">
                                     {s.stats.map((stat, j) => (
@@ -158,7 +209,13 @@ export default function TestimonialCarousel() {
                             </div>
 
                             <div className="right">
-                                <img src={s.img} alt="" />
+                                {s.videoUrl ? (
+                                    <div className="testimonial-video-wrapper">
+                                        <LazyYouTube url={s.videoUrl} title={`${s.author} testimonial`} />
+                                    </div>
+                                ) : (
+                                    <img src={s.img} alt={s.author} loading="lazy" />
+                                )}
                             </div>
                         </div>
                     ))}
