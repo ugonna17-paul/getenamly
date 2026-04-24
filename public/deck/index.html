@@ -298,6 +298,30 @@
     color: var(--bg-2); font-weight: 700; font-size: 19px;
     z-index: 3;
   }
+  .contact-link {
+    color: var(--bg-2);
+    text-decoration: none;
+    font-weight: 700;
+    transition: opacity 0.2s;
+  }
+  .contact-link:hover { opacity: 0.75; text-decoration: underline; }
+  .contact-socials {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+  .contact-social {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--bg-2);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 17px;
+    transition: opacity 0.2s;
+  }
+  .contact-social:hover { opacity: 0.75; }
+  .contact-social svg { display: block; }
 
   /* Callout band */
   .callout {
@@ -355,7 +379,7 @@
         <div style="width: 4px; height: 56px; background: linear-gradient(180deg, var(--teal), var(--cyan)); border-radius: 2px;"></div>
         <div>
           <div style="font-size: 22px; font-weight: 700; color: var(--text);">Dr. Bethel Ozumba</div>
-          <div style="font-size: 17px; color: var(--text-4); margin-top: 4px;">Founder &amp; CEO &nbsp;&middot;&nbsp; info@enamly.ai &nbsp;&middot;&nbsp; (346) 608-9855</div>
+          <div style="font-size: 17px; color: var(--text-4); margin-top: 4px;">Founder &amp; CEO &nbsp;&middot;&nbsp; info@enamly.ai &nbsp;&middot;&nbsp; (832) 704-9852</div>
         </div>
       </div>
     </div>
@@ -997,10 +1021,19 @@
     </div>
   </div>
   <div class="contact-bar">
-    <div>info@enamly.ai</div>
-    <div>enamly.ai</div>
-    <div>Demo: (346) 608-9855</div>
-    <div>@dr.b_bay &middot; 50K+ followers</div>
+    <a href="mailto:info@enamly.ai" class="contact-link">info@enamly.ai</a>
+    <a href="https://enamly.ai" target="_blank" rel="noopener" class="contact-link">enamly.ai</a>
+    <a href="tel:+18327049852" class="contact-link">Demo: (832) 704-9852</a>
+    <div class="contact-socials">
+      <a href="https://instagram.com/dr.b_bay" target="_blank" rel="noopener" class="contact-social" aria-label="Instagram">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+        <span>@dr.b_bay</span>
+      </a>
+      <a href="https://linkedin.com/in/drbbay" target="_blank" rel="noopener" class="contact-social" aria-label="LinkedIn">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+        <span>/in/drbbay</span>
+      </a>
+    </div>
   </div>
   <div class="page-num" style="color: rgba(10,15,28,0.6); bottom: 88px;">16 / 16</div>
 </div>
