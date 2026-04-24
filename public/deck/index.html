@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<base href="/deck/">
+<title>Enamly — The AI Receptionist for Dental Practices</title>
+<meta name="description" content="Enamly is the AI receptionist for dental practices. Answer every call 24/7. Book directly into the PMS. Zero missed revenue. 10 paying practices, 10,000+ calls, 89% gross margin, cash-flow positive. Raising $1.5–2M Seed.">
+<meta property="og:title" content="Enamly — The AI Receptionist for Dental Practices">
+<meta property="og:description" content="10 paying practices. 10,000+ patient calls. 89% gross margin. Cash-flow positive. Raising $1.5–2M Seed.">
+<meta property="og:image" content="https://getenamly.com/deck/assets/dr-bbay.jpg">
+<meta property="og:url" content="https://getenamly.com/deck">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="/cropped-Enamly.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0A0F1C;
+    --bg-2: #0F172A;
+    --card: #111C2F;
+    --card-border: #1E293B;
+    --teal: #14B8A6;
+    --teal-2: #2DD4BF;
+    --cyan: #06B6D4;
+    --text: #FFFFFF;
+    --text-2: #CBD5E1;
+    --text-3: #94A3B8;
+    --text-4: #64748B;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: var(--bg);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  .deck-wrapper {
+    margin: 0 auto;
+  }
+  .deck {
+    width: 1920px;
+    transform-origin: top left;
+  }
+
+  .slide {
+    width: 1920px; height: 1080px;
+    position: relative;
+    overflow: hidden;
+    padding: 80px 100px;
+    color: var(--text);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background:
+      radial-gradient(1200px 800px at 90% -10%, rgba(20,184,166,0.14), transparent 60%),
+      radial-gradient(900px 600px at -10% 100%, rgba(6,182,212,0.10), transparent 55%),
+      linear-gradient(180deg, var(--bg-2) 0%, var(--bg) 100%);
+  }
+  .slide::before {
+    content: "";
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+    background-size: 80px 80px;
+    mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  .slide > * { position: relative; z-index: 1; }
+
+  .logo {
+    position: absolute; top: 44px; right: 64px;
+    height: 44px; opacity: 0.85;
+    z-index: 2;
+  }
+  .page-num {
+    position: absolute; bottom: 36px; right: 64px;
+    font-size: 16px; color: var(--text-4);
+    font-weight: 500;
+    z-index: 2;
+  }
+
+  .teal { color: var(--teal); }
+  .grad-text {
+    background: linear-gradient(135deg, var(--teal-2) 0%, var(--cyan) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .accent-bar {
+    width: 88px; height: 5px;
+    background: linear-gradient(90deg, var(--teal) 0%, var(--cyan) 100%);
+    border-radius: 3px;
+    margin: 22px 0;
+    box-shadow: 0 0 20px rgba(20,184,166,0.4);
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    font-size: 13px;
+    color: var(--teal-2);
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    background: rgba(20,184,166,0.08);
+    border: 1px solid rgba(20,184,166,0.25);
+    border-radius: 999px;
+    margin-bottom: 20px;
+  }
+  .eyebrow::before {
+    content: "";
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--teal);
+    box-shadow: 0 0 8px var(--teal);
+  }
+
+  h1 {
+    font-size: 72px; font-weight: 800; line-height: 1.05;
+    letter-spacing: -1.5px;
+    color: var(--text);
+  }
+  h2 {
+    font-size: 52px; font-weight: 700; line-height: 1.15;
+    letter-spacing: -0.8px;
+  }
+
+  .body-text { font-size: 22px; color: var(--text-2); line-height: 1.55; }
+
+  /* Cards */
+  .card {
+    background: linear-gradient(180deg, rgba(30,41,59,0.6) 0%, rgba(17,28,47,0.8) 100%);
+    border-radius: 18px; padding: 32px;
+    border: 1px solid var(--card-border);
+    backdrop-filter: blur(10px);
+  }
+  .card-accent {
+    background:
+      linear-gradient(180deg, rgba(20,184,166,0.08) 0%, rgba(20,184,166,0.03) 100%);
+    border-radius: 18px; padding: 32px;
+    border: 1px solid rgba(20,184,166,0.35);
+    box-shadow: 0 0 40px rgba(20,184,166,0.05);
+  }
+  .card-highlight {
+    background:
+      linear-gradient(180deg, rgba(20,184,166,0.18) 0%, rgba(20,184,166,0.06) 100%);
+    border-radius: 18px; padding: 32px;
+    border: 2px solid var(--teal);
+    box-shadow: 0 0 60px rgba(20,184,166,0.2);
+  }
+
+  /* Big stat number glow */
+  .stat-big {
+    font-size: 72px; font-weight: 900;
+    background: linear-gradient(135deg, var(--teal-2) 0%, var(--cyan) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 0.95;
+    letter-spacing: -2px;
+    filter: drop-shadow(0 0 20px rgba(20,184,166,0.3));
+  }
+  .stat-label { font-size: 18px; color: var(--text-2); margin-top: 14px; font-weight: 600; }
+  .stat-sub { font-size: 14px; color: var(--text-4); margin-top: 6px; }
+
+  /* Quote */
+  .quote-card {
+    background: linear-gradient(180deg, rgba(30,41,59,0.7) 0%, rgba(17,28,47,0.9) 100%);
+    border-radius: 16px; padding: 28px 32px;
+    border-left: 4px solid var(--teal);
+    border-top: 1px solid rgba(20,184,166,0.15);
+    border-right: 1px solid rgba(20,184,166,0.08);
+    border-bottom: 1px solid rgba(20,184,166,0.08);
+  }
+  .quote-text {
+    font-size: 20px; color: var(--text); line-height: 1.55;
+    font-style: italic; margin-bottom: 16px;
+    font-weight: 400;
+  }
+  .quote-author { font-size: 16px; color: var(--teal-2); font-weight: 700; }
+  .quote-affil { font-size: 14px; color: var(--text-3); margin-top: 2px; }
+
+  /* Comp table */
+  .vs-table { width: 100%; border-collapse: separate; border-spacing: 0; }
+  .vs-table th {
+    background: rgba(30,41,59,0.5);
+    padding: 20px 24px; font-size: 18px;
+    color: var(--text-3); font-weight: 600; text-align: center;
+    border-bottom: 2px solid var(--card-border);
+  }
+  .vs-table th:last-child {
+    background: rgba(20,184,166,0.15);
+    color: var(--teal-2);
+  }
+  .vs-table td {
+    padding: 18px 24px; font-size: 18px; color: var(--text-2);
+    text-align: center;
+    border-bottom: 1px solid rgba(30,41,59,0.5);
+  }
+  .vs-table td:first-child { color: var(--text-3); font-weight: 600; text-align: left; }
+  .vs-table td:last-child { color: var(--teal-2); font-weight: 700; }
+
+  /* Headshot circle */
+  .headshot-circle {
+    width: 460px; height: 460px; border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    background: linear-gradient(135deg, var(--teal) 0%, var(--cyan) 100%);
+    padding: 5px;
+    box-shadow:
+      0 0 0 1px rgba(20,184,166,0.4),
+      0 20px 80px rgba(20,184,166,0.25);
+  }
+  .headshot-circle > img {
+    width: 100%; height: 100%; border-radius: 50%;
+    object-fit: cover; object-position: center top;
+    display: block;
+  }
+
+  /* Step cards */
+  .step {
+    flex: 1;
+    background: linear-gradient(180deg, rgba(30,41,59,0.6) 0%, rgba(17,28,47,0.85) 100%);
+    border-radius: 18px; padding: 32px 24px;
+    border: 1px solid var(--card-border);
+    text-align: center;
+    position: relative;
+  }
+  .step-num {
+    width: 56px; height: 56px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--teal) 0%, var(--cyan) 100%);
+    color: var(--bg-2); font-weight: 900; font-size: 24px;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 20px;
+    box-shadow: 0 8px 24px rgba(20,184,166,0.35);
+  }
+  .step-title { font-size: 22px; font-weight: 700; color: var(--text); margin-bottom: 10px; }
+  .step-desc { font-size: 15px; color: var(--text-3); line-height: 1.5; }
+
+  /* Agent cards */
+  .agent-card {
+    background: linear-gradient(180deg, rgba(30,41,59,0.55) 0%, rgba(17,28,47,0.85) 100%);
+    border-radius: 16px; padding: 28px 22px;
+    border: 1px solid var(--card-border);
+    text-align: center;
+    transition: all 0.2s;
+  }
+  .agent-icon {
+    width: 56px; height: 56px;
+    background: linear-gradient(135deg, rgba(20,184,166,0.2) 0%, rgba(6,182,212,0.15) 100%);
+    border: 1px solid rgba(20,184,166,0.3);
+    border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 18px;
+    font-size: 26px;
+    color: var(--teal-2);
+  }
+  .agent-card-title { font-size: 20px; font-weight: 700; color: var(--text); }
+  .agent-card-desc { font-size: 14px; color: var(--text-4); margin-top: 8px; line-height: 1.4; }
+
+  /* Ask list */
+  .ask-list { list-style: none; padding: 0; }
+  .ask-list li {
+    font-size: 22px; color: var(--text-2); padding: 20px 0;
+    padding-left: 56px; position: relative;
+    border-bottom: 1px solid rgba(30,41,59,0.6);
+    line-height: 1.5;
+  }
+  .ask-num {
+    position: absolute; left: 0; top: 18px;
+    width: 36px; height: 36px;
+    background: linear-gradient(135deg, var(--teal) 0%, var(--cyan) 100%);
+    border-radius: 50%; display: flex; align-items: center;
+    justify-content: center; font-size: 16px; font-weight: 800;
+    color: var(--bg-2);
+    box-shadow: 0 6px 18px rgba(20,184,166,0.35);
+  }
+  .ask-highlight { color: var(--teal-2); font-weight: 700; }
+
+  /* Contact bar */
+  .contact-bar {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    background: linear-gradient(90deg, var(--teal) 0%, var(--cyan) 100%);
+    padding: 20px 100px;
+    display: flex; justify-content: space-between; align-items: center;
+    color: var(--bg-2); font-weight: 700; font-size: 19px;
+    z-index: 3;
+  }
+
+  /* Callout band */
+  .callout {
+    padding: 26px 40px;
+    background: linear-gradient(90deg, rgba(20,184,166,0.14) 0%, rgba(6,182,212,0.08) 100%);
+    border-left: 4px solid var(--teal);
+    border-radius: 12px;
+    font-size: 22px; color: var(--text); line-height: 1.5;
+    font-weight: 500;
+    box-shadow: 0 0 40px rgba(20,184,166,0.08);
+  }
+
+  /* Slide progress dots (right side) */
+  .progress-dots {
+    position: fixed;
+    right: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    z-index: 100;
+    opacity: 0.8;
+  }
+  .progress-dots .dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: rgba(255,255,255,0.25);
+    transition: all 0.2s;
+  }
+  .progress-dots .dot.active {
+    background: var(--teal);
+    box-shadow: 0 0 8px var(--teal);
+    transform: scale(1.5);
+  }
+
+  @media (max-width: 900px) {
+    .progress-dots { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="deck-wrapper">
+<div class="deck">
+
+<!-- SLIDE 1: COVER -->
+<div class="slide" style="justify-content: center;">
+  <div style="display: flex; align-items: center; gap: 100px; flex: 1;">
+    <div style="flex: 1;">
+      <img src="assets/logo-white.svg" alt="Enamly" style="height: 130px; margin-bottom: 56px;">
+      <h1 style="font-size: 92px; line-height: 1.02; letter-spacing: -3px;">The AI Receptionist<br>for <span class="grad-text">Dental Practices.</span></h1>
+      <div class="accent-bar" style="width: 180px; margin: 32px 0;"></div>
+      <div style="font-size: 30px; color: var(--text-3); line-height: 1.45; max-width: 940px; font-weight: 400;">Answer every patient call, 24/7. Book appointments directly into the practice management system. Eliminate missed revenue.</div>
+      <div style="margin-top: 72px; display: flex; align-items: center; gap: 28px;">
+        <div style="width: 4px; height: 56px; background: linear-gradient(180deg, var(--teal), var(--cyan)); border-radius: 2px;"></div>
+        <div>
+          <div style="font-size: 22px; font-weight: 700; color: var(--text);">Dr. Bethel Ozumba</div>
+          <div style="font-size: 17px; color: var(--text-4); margin-top: 4px;">Founder &amp; CEO &nbsp;&middot;&nbsp; info@enamly.ai &nbsp;&middot;&nbsp; (346) 608-9855</div>
+        </div>
+      </div>
+    </div>
+    <div style="flex: 0 0 500px;">
+      <div class="headshot-circle" style="width: 500px; height: 500px;">
+        <img src="assets/dr-bbay.jpg" alt="Dr. Bethel Ozumba">
+      </div>
+    </div>
+  </div>
+  <div class="page-num">01 / 16</div>
+</div>
+
+<!-- SLIDE 2: PROBLEM -->
+<div class="slide">
+  <img src="assets/logo.png" class="logo" alt="Enamly">
+  <div>
+    <div class="eyebrow">The Problem</div>
+    <h1>Every Missed Call Costs<br>a Dental Practice <span class="grad-text">$10,000.</span></h1>
+    <div class="accent-bar"></div>
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;">
+    <div class="card-accent" style="text-align: center; padding: 44px 32px;">
+      <div class="stat-big" style="font-size: 84px;">35-50%</div>
+      <div class="stat-label">of dental calls go unanswered</div>
+    </div>
+    <div class="card-accent" style="text-align: center; padding: 44px 32px;">
+      <div class="stat-big" style="font-size: 84px;">80%</div>
+      <div class="stat-label">of patients never call back</div>
+    </div>
+    <div class="card-accent" style="text-align: center; padding: 44px 32px;">
+      <div class="stat-big" style="font-size: 84px;">$100K+</div>
+      <div class="stat-label">lost per practice per year</div>
+    </div>
+  </div>
+
+  <div style="font-size: 24px; color: var(--text-2); line-height: 1.55; max-width: 1700px;">The average dental patient is worth $10,000 over their lifetime. When nobody answers, they call the next practice on Google. <strong style="color: var(--text);">200,000+ practices</strong> in the US are losing patients every day to unanswered phones.</div>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px;">
+    <div class="quote-card">
+      <div class="quote-text">"After 5pm and on weekends, calls went to voicemail and we were losing new patients ready to book."</div>
+      <div class="quote-author">Dr. Justin Sanders</div>
+      <div class="quote-affil">Sanders Dental Studio</div>
+    </div>
+    <div class="quote-card">
+      <div class="quote-text">"Patients call after work. If we miss it, they book elsewhere."</div>
+      <div class="quote-author">Dr. Loc Tong</div>
+      <div class="quote-affil">Gentle Dentistry, Tampa</div>
+    </div>
+  </div>
+  <div class="page-num">02 / 16</div>
+</div>
+
+<!-- SLIDE 3: SOLUTION -->
+<div class="slide">
+  <img src="assets/logo.png" class="logo" alt="Enamly">
+  <div style="display: flex; gap: 80px; align-items: center; flex: 1;">
+    <div style="flex: 0 0 680px;">
+      <div class="eyebrow">The Solution</div>
+      <h1>Zero Missed Calls.<br><span class="grad-text">Patients Booked.</span></h1>
+      <div class="accent-bar"></div>
+      <div style="font-size: 22px; color: var(--text-2); line-height: 1.6; margin-top: 28px;">Enamly is a vertical AI receptionist built for dental. Answers every call, determines intent, collects patient info, and books directly into the PMS or sends a scheduling link by text. Every call is recorded, transcribed, and analyzed in the practice's dashboard.</div>
+      <div style="display: flex; flex-direction: column; gap: 18px; margin-top: 44px;">
+        <div style="display: flex; align-items: center; gap: 18px;">
+          <div style="width: 10px; height: 10px; border-radius: 50%; background: var(--teal); box-shadow: 0 0 12px var(--teal);"></div>
+          <div style="font-size: 22px; color: var(--text-2);"><span class="teal" style="font-weight: 700;">Integrated</span> &middot; Real-time PMS booking via NexHealth</div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 18px;">
+          <div style="width: 10px; height: 10px; border-radius: 50%; background: var(--teal); box-shadow: 0 0 12px var(--teal);"></div>
+          <div style="font-size: 22px; color: var(--text-2);"><span class="teal" style="font-weight: 700;">Standalone</span> &middot; Works with any practice on any system</div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 18px;">
+          <div style="width: 10px; height: 10px; border-radius: 50%; background: var(--teal); box-shadow: 0 0 12px var(--teal);"></div>
+          <div style="font-size: 22px; color: var(--text-2);"><span class="teal" style="font-weight: 700;">HIPAA</span> &middot; AWS KMS encrypted, BAAs in place</div>
+        </div>
+      </div>
+    </div>
+    <div style="flex: 1; display: flex; align-items: center; justify-content: center;">
+      <div style="position: relative; width: 100%;">
+        <div style="position: absolute; inset: -20px; background: radial-gradient(ellipse at center, rgba(20,184,166,0.25), transparent 70%); filter: blur(30px);"></div>
+        <img src="assets/dashboard.png" alt="Enamly Dashboard" style="position: relative; width: 100%; height: auto; border-radius: 18px; border: 1px solid rgba(20,184,166,0.25); box-shadow: 0 30px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.05);">
+      </div>
+    </div>
+  </div>
+  <div class="page-num">03 / 16</div>
+</div>
+
+<!-- SLIDE 4: HOW IT WORKS -->
+<div class="slide">
+  <img src="assets/logo.png" class="logo" alt="Enamly">
+  <div>
+    <div class="eyebrow">How It Works</div>
+    <h1>From Phone Ring to<br><span class="grad-text">Appointment Booked.</span></h1>
+    <div class="accent-bar"></div>
+    <div style="font-size: 22px; color: var(--text-2); line-height: 1.55; margin-top: 24px; max-width: 1700px;">A 22-node conversation flow built over 29 iterations from thousands of real patient calls. Every interaction follows a deterministic path designed by a dentist.</div>
+  </div>
+
+  <div style="display: flex; align-items: stretch; gap: 18px;">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-title">Patient Calls</div>
+      <div class="step-desc">Enamly picks up instantly with the practice's name. No hold. No voicemail.</div>
+    </div>
+    <div style="display: flex; align-items: center; color: var(--teal); font-size: 28px;">&rarr;</div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-title">Intent Detection</div>
+      <div class="step-desc">New patient, existing, emergency, insurance, or general inquiry.</div>
+    </div>
+    <div style="display: flex; align-items: center; color: var(--teal); font-size: 28px;">&rarr;</div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-title">Information Capture</div>
+      <div class="step-desc">Name, DOB, phone, email, insurance. Triage protocol for emergencies.</div>
+    </div>
+    <div style="display: flex; align-items: center; color: var(--teal); font-size: 28px;">&rarr;</div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-title">Booking</div>
+      <div class="step-desc">Books directly into the PMS (integrated) or sends scheduling link by SMS and email.</div>
+    </div>
+    <div style="display: flex; align-items: center; color: var(--teal); font-size: 28px;">&rarr;</div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-title">Dashboard</div>
+      <div class="step-desc">Recording, transcript, AI summary, sentiment, and analytics for the practice.</div>
+    </div>
+  </div>
+
+  <div style="display: flex; gap: 0; justify-content: space-around; padding: 32px 60px; background: rgba(20,184,166,0.05); border: 1px solid rgba(20,184,166,0.2); border-radius: 18px;">
+    <div style="text-align: center;">
+      <div class="stat-big" style="font-size: 56px;">20+</div>
+      <div class="stat-sub" style="font-size: 15px; margin-top: 10px;">Languages</div>
+    </div>
+    <div style="width: 1px; background: rgba(255,255,255,0.1);"></div>
+    <div style="text-align: center;">
+      <div class="stat-big" style="font-size: 56px;">10+</div>
+      <div class="stat-sub" style="font-size: 15px; margin-top: 10px;">PMS Systems</div>
+    </div>
+    <div style="width: 1px; background: rgba(255,255,255,0.1);"></div>
+    <div style="text-align: center;">
+      <div class="stat-big" style="font-size: 56px;">22</div>
+      <div class="stat-sub" style="font-size: 15px; margin-top: 10px;">Decision Nodes</div>
+    </div>
+    <div style="width: 1px; background: rgba(255,255,255,0.1);"></div>
+    <div style="text-align: center;">
+      <div class="stat-big" style="font-size: 56px;">9</div>
+      <div class="stat-sub" style="font-size: 15px; margin-top: 10px;">Real-Time Tools</div>
+    </div>
+  </div>
+  <div class="page-num">04 / 16</div>
+</div>
+
+<!-- SLIDE 5: TRACTION -->
+<div class="slide">
+  <img src="assets/logo.png" class="logo" alt="Enamly">
+  <div>
+    <div class="eyebrow">Traction</div>
+    <h1>Real Revenue. Real Practices.<br><span class="grad-text">Cash-Flow Positive.</span></h1>
+    <div class="accent-bar"></div>
+    <div style="font-size: 22px; color: var(--text-2); line-height: 1.55; margin-top: 24px; max-width: 1700px;">Pre-seed. No outside capital. Revenue exceeds all operating costs. One recovered patient pays for an entire year of Enamly at most practices.</div>
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;">
+    <div class="card-accent" style="text-align: center; padding: 40px 32px;">
+      <div class="stat-big">10</div>
+      <div class="stat-label">Paying Practices</div>
+      <div class="stat-sub">Live on Enamly today</div>
+    </div>
+    <div class="card-accent" style="text-align: center; padding: 40px 32px;">
+      <div class="stat-big">$3,601</div>
+      <div class="stat-label">Monthly Recurring Revenue</div>
+      <div class="stat-sub">Mix of integrated and standalone</div>
+    </div>
+    <div class="card-accent" style="text-align: center; padding: 40px 32px;">
+      <div class="stat-big">10,000+</div>
+      <div class="stat-label">Patient Calls Handled</div>
+      <div class="stat-sub">~250 hours of AI conversations</div>
+    </div>
+    <div class="card-accent" style="text-align: center; padding: 40px 32px;">
+      <div class="stat-big">85%</div>
+      <div class="stat-label">Demo-to-Close Rate</div>
+      <div class="stat-sub">Founder-led sales motion</div>
+    </div>
+    <div class="card-accent" style="text-align: center; padding: 40px 32px;">
+      <div class="stat-big">0</div>
+      <div class="stat-label">Churn</div>
+      <div class="stat-sub">No practice has cancelled</div>
+    </div>
+    <div class="card-highlight" style="text-align: center; padding: 40px 32px;">
+      <div class="stat-big">89%</div>
+      <div class="stat-label" style="color: var(--text);">Gross Margin</div>
+      <div class="stat-sub" style="color: var(--text-3);">$38 cost to serve per practice</div>
+    </div>
+  </div>
+  <div class="page-num">05 / 16</div>
+</div>
+
+<!-- SLIDE 6: CASE STUDY -->
+<div class="slide">
+  <img src="assets/logo.png" class="logo" alt="Enamly">
+  <div>
+    <div class="eyebrow">Case Study &middot; Gentle Dentistry, Tampa</div>
+    <h1>Over $13,000 Recovered<br><span class="grad-text">in Month One.</span></h1>
+    <div class="accent-bar"></div>
+    <div style="font-size: 20px; color: var(--text-2); line-height: 1.55; margin-top: 20px; max-width: 1700px;">Dr. Loc Tong's first 30 days on Enamly. 315 inbound calls captured, 8 booked appointments, $13,696 in production from calls his team would have missed. He texted us mid month, unprompted, to say it was his record month for new patients in the practice's history.</div>
+  </div>
+
+  <div style="display: flex; gap: 28px; align-items: stretch;">
+    <div class="card" style="flex: 0 0 220px; padding: 24px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+      <div style="width: 160px; height: 190px; border-radius: 14px; overflow: hidden; border: 3px solid var(--teal); box-shadow: 0 10px 30px rgba(20,184,166,0.25);">
+        <img src="assets/dr-loc.png" alt="Dr. Loc Tong" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+      <div style="font-size: 18px; font-weight: 700; color: var(--text); margin-top: 18px; text-align: center;">Dr. Loc Tong</div>
+      <div style="font-size: 14px; color: var(--text-4); margin-top: 4px; text-align: center;">Gentle Dentistry, Tampa</div>
+    </div>
+    <div class="card" style="flex: 1; padding: 24px; display: flex; flex-direction: column; justify-content: space-between;">
+      <img src="assets/dr-loc-analytics.png" alt="Call Analytics" style="width: 100%; max-height: 340px; object-fit: contain; border-radius: 10px;">
+      <div style="display: flex; gap: 40px; margin-top: 20px; justify-content: center;">
+        <div style="text-align: center;"><div class="stat-big" style="font-size: 36px;">315</div><div style="font-size: 13px; color: var(--text-4); margin-top: 6px;">Calls</div></div>
+        <div style="width: 1px; background: rgba(255,255,255,0.1);"></div>
+        <div style="text-align: center;"><div class="stat-big" style="font-size: 36px;">$13,696</div><div style="font-size: 13px; color: var(--text-4); margin-top: 6px;">Production (Mo 1)</div></div>
+        <div style="width: 1px; background: rgba(255,255,255,0.1);"></div>
+        <div style="text-align: center;"><div class="stat-big" style="font-size: 36px;">8</div><div style="font-size: 13px; color: var(--text-4); margin-top: 6px;">Bookings</div></div>
+      </div>
+    </div>
+    <div style="flex: 0 0 460px; display: flex; flex-direction: column; gap: 14px;">
+      <div class="card-highlight" style="flex: 1; padding: 22px; display: flex; flex-direction: column; min-height: 0;">
+        <div style="font-size: 12px; color: var(--text-4); margin-bottom: 10px; letter-spacing: 1px; text-transform: uppercase; font-weight: 600;">Unsolicited &middot; March 30, 2026</div>
+        <div style="border-radius: 10px; overflow: hidden; margin-bottom: 14px; flex-shrink: 0;">
+          <img src="assets/dr-loc-text.png" alt="Text message" style="width: 100%; max-height: 180px; object-fit: cover; object-position: top; border-radius: 10px;">
+        </div>
+        <div style="font-size: 19px; font-weight: 600; color: var(--text); line-height: 1.4;">"This month <span class="grad-text" style="font-weight: 800;">27 NPs</span>. <span class="grad-text" style="font-weight: 800;">Record high</span>. Some of them <span class="grad-text" style="font-weight: 800;">Enamly catching for us</span>."</div>
+      </div>
+      <div style="background: rgba(20,184,166,0.08); border-radius: 14px; padding: 16px 24px; border: 1px solid rgba(20,184,166,0.25); display: flex; gap: 40px;">
+        <div><div style="font-size: 12px; color: var(--teal-2); font-weight: 700; letter-spacing: 1px; text-transform: uppercase;">Before</div><div style="font-size: 20px; font-weight: 800; color: #F87171; margin-top: 2px;">~50 missed/wk</div></div>
+        <div><div style="font-size: 12px; color: var(--teal-2); font-weight: 700; letter-spacing: 1px; text-transform: uppercase;">After</div><div style="font-size: 20px; font-weight: 800; color: #4ADE80; margin-top: 2px;">0 missed</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="page-num">06 / 16</div>
+</div>
+
+<!-- SLIDE 7: 16 AI AGENTS -->
+<div class="slide">
+  <img src="assets/logo.png" class="logo" alt="Enamly">
+  <div>
+    <div class="eyebrow">Technology &middot; Vertical AI Platform</div>
+    <h1>16 AI Agents. One Founder.<br><span class="grad-text">$800/mo Burn.</span></h1>
+    <div class="accent-bar"></div>
+    <div style="font-size: 22px; color: var(--text-2); line-height: 1.55; margin-top: 24px; max-width: 1600px;">Enamly is a one person company that runs like a 12 person company. I built 16 internal AI agents that handle provisioning, call QA, outreach, content, ad optimization, and ops monitoring. This is why the business runs on $800 a month of burn at 89% gross margin.</div>
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;">
+    <div class="agent-card"><div class="agent-icon">&#9881;</div><div class="agent-card-title">Provisioning</div><div class="agent-card-desc">Auto-deploys practices in 48hrs</div></div>
+    <div class="agent-card"><div class="agent-icon">&#9745;</div><div class="agent-card-title">Call QA</div><div class="agent-card-desc">2-tier analysis on every call</div></div>
+    <div class="agent-card"><div class="agent-icon">&#9742;</div><div class="agent-card-title">VoIP Config</div><div class="agent-card-desc">Auto-configures phone systems</div></div>
+    <div class="agent-card"><div class="agent-icon">&#9993;</div><div class="agent-card-title">Outreach</div><div class="agent-card-desc">LinkedIn + cold email automation</div></div>
+    <div class="agent-card"><div class="agent-icon">&#9783;</div><div class="agent-card-title">Content</div><div class="agent-card-desc">Social media + carousel gen</div></div>
+    <div class="agent-card"><div class="agent-icon">&#9888;</div><div class="agent-card-title">Monitoring</div><div class="agent-card-desc">Email, calendar, call alerts</div></div>
+    <div class="agent-card"><div class="agent-icon">&#10004;</div><div class="agent-card-title">Demo Prep</div><div class="agent-card-desc">Auto-researches prospects</div></div>
+    <div class="agent-card"><div class="agent-icon">&#9733;</div><div class="agent-card-title">Ads Manager</div><div class="agent-card-desc">Meta ads pulse + optimization</div></div>
+  </div>
+
+  <div class="callout">Enamly is being built as an <span class="grad-text" style="font-weight: 800;">agent company</span>, not a SaaS company. Voice is the first agent we shipped externally. The next chapter is a fleet of vertical AI agents that run every workflow in a dental practice, from front desk to back office.</div>
+  <div class="page-num">07 / 16</div>
+</div>
+
+<!-- SLIDE 8: WHY NOW -->
+<div class="slide">
+  <img src="assets/logo.png" class="logo" alt="Enamly">
+  <div>
+    <div class="eyebrow">Why Now</div>
+    <h1>The Window <span class="grad-text">Just Opened.</span></h1>
+    <div class="accent-bar"></div>
+    <div style="font-size: 22px; color: var(--text-2); line-height: 1.55; margin-top: 24px; max-width: 1700px;">Three forces converged in the last 18 months that make this inevitable. Not in five years. Now.</div>
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;">
+    <div class="card" style="padding: 44px 38px;">
+      <div style="font-size: 68px; font-weight: 900; line-height: 1; margin-bottom: 24px;" class="grad-text">01</div>
+      <div style="font-size: 26px; font-weight: 700; color: var(--text); margin-bottom: 18px; line-height: 1.25;">Voice AI crossed the human threshold.</div>
+      <div style="font-size: 17px; color: var(--text-3); line-height: 1.6;">Two years ago, patients hung up on AI voices. Today, they can't tell the difference. GPT-class voice models with sub-second latency made this a product, not a science project.</div>
+    </div>
+    <div class="card" style="padding: 44px 38px;">
+      <div style="font-size: 68px; font-weight: 900; line-height: 1; margin-bottom: 24px;" class="grad-text">02</div>
+      <div style="font-size: 26px; font-weight: 700; color: var(--text); margin-bottom: 18px; line-height: 1.25;">Dental adopted AI everywhere except the phone.</div>
+      <div style="font-size: 17px; color: var(--text-3); line-height: 1.6;">Diagnostics, treatment planning, charting, X-ray analysis &mdash; every chair-side workflow has an AI startup. Nobody went after the front desk phone, the highest-leverage layer in the practice.</div>
+    </div>
+    <div class="card" style="padding: 44px 38px;">
+      <div style="font-size: 68px; font-weight: 900; line-height: 1; margin-bottom: 24px;" class="grad-text">03</div>
+      <div style="font-size: 26px; font-weight: 700; color: var(--text); margin-bottom: 18px; line-height: 1.25;">Patients stopped leaving voicemails.</div>
+      <div style="font-size: 17px; color: var(--text-3); line-height: 1.6;">If nobody picks up, they don't try again. They Google the next practice. Miss the call, lose the patient, lose $10,000 in lifetime value. There is no second chance anymore.</div>
+    </div>
+  </div>
+
+  <div class="callout">The technology is finally ready. The phone is wide open. And I'm the only dentist building for it.</div>
+  <div class="page-num">08 / 16</div>
+</div>
+
+<!-- SLIDE 9: MARKET -->
+<div class="slide">
+  <img src="assets/logo.png" class="logo" alt="Enamly">
+  <div>
+    <div class="eyebrow">Market Opportunity</div>
+    <h1>$8&ndash;12B Market. <span class="grad-text">No One Owns It.</span></h1>
+    <div class="accent-bar"></div>
+    <div style="font-size: 22px; color: var(--text-2); line-height: 1.55; margin-top: 22px; max-width: 1700px;">200,000 US dental practices. 9,000+ DSOs consolidating the market. The front desk communications layer is wide open and growing fast.</div>
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;">
+    <div class="card-accent" style="padding: 36px 38px;">
+      <div style="font-size: 14px; color: var(--teal-2); font-weight: 800; letter-spacing: 3px;">TAM</div>
+      <div class="stat-big" style="font-size: 72px; margin-top: 14px;">$12B</div>
+      <div style="font-size: 17px; color: var(--text-3); margin-top: 18px; line-height: 1.5;">200K US dental practices &times; $5K a year in AI receptionist spend.</div>
+    </div>
+    <div class="card-accent" style="padding: 36px 38px;">
+      <div style="font-size: 14px; color: var(--teal-2); font-weight: 800; letter-spacing: 3px;">SAM</div>
+      <div class="stat-big" style="font-size: 72px; margin-top: 14px;">$7.2B</div>
+      <div style="font-size: 17px; color: var(--text-3); margin-top: 18px; line-height: 1.5;">60% of practices on NexHealth compatible PMS systems we serve today.</div>
+    </div>
+    <div class="card-highlight" style="padding: 36px 38px;">
+      <div style="font-size: 14px; color: var(--teal-2); font-weight: 800; letter-spacing: 3px;">SOM &middot; 3 YEAR</div>
+      <div class="stat-big" style="font-size: 72px; margin-top: 14px;">$60M</div>
+      <div style="font-size: 17px; color: var(--text-2); margin-top: 18px; line-height: 1.5;">1% capture via DSO channel and PMS marketplace placement.</div>
+    </div>
+  </div>
+
+  <div style="display: flex; gap: 0; justify-content: space-around; padding: 32px 60px; background: rgba(20,184,166,0.05); border: 1px solid rgba(20,184,166,0.2); border-radius: 18px;">
+    <div style="text-align: center;">
+      <div class="stat-big" style="font-size: 60px;">200K+</div>
+      <div class="stat-sub" style="margin-top: 10px; font-size: 15px;">US Dental Practices</div>
+    </div>
+    <div style="width: 1px; background: rgba(255,255,255,0.1);"></div>
+    <div style="text-align: center;">
+      <div class="stat-big" style="font-size: 60px;">9K+</div>
+      <div class="stat-sub" style="margin-top: 10px; font-size: 15px;">DSOs (40% by 2028)</div>
+    </div>
+    <div style="width: 1px; background: rgba(255,255,255,0.1);"></div>
+    <div style="text-align: center;">
+      <div class="stat-big" style="font-size: 60px;">22.3%</div>
+      <div class="stat-sub" style="margin-top: 10px; font-size: 15px;">CAGR ($421M → $3.1B by 2034)</div>
+    </div>
+  </div>
+  <div class="page-num">09 / 16</div>
+</div>
+
+<!-- SLIDE 10: COMPETITION -->
+<div class="slide">
+  <img src="assets/logo.png" class="logo" alt="Enamly">
+  <div>
+    <div class="eyebrow">Competitive Landscape</div>
+    <h1>AI is Easy. Dental is Hard.<br><span class="grad-text">We Master Both.</span></h1>
+    <div class="accent-bar"></div>
+  </div>
+
+  <table class="vs-table">
+    <thead>
+      <tr>
+        <th style="text-align: left; border-radius: 12px 0 0 0;"></th>
+        <th>Arini<div style="font-size: 12px; color: var(--text-4); font-weight: 400; margin-top: 4px;">YC W24 &middot; $500K</div></th>
+        <th>Patient Desk</th>
+        <th>Rondah AI<div style="font-size: 12px; color: var(--text-4); font-weight: 400; margin-top: 4px;">$1.8M pre-seed</div></th>
+        <th style="border-radius: 0 12px 0 0;">Enamly</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Pricing</td><td>$500-800/mo</td><td>Undisclosed</td><td>Undisclosed</td><td>Starting at $299/mo</td></tr>
+      <tr><td>Modes</td><td>Integrated only</td><td>Limited</td><td>Integrated only</td><td>Both modes</td></tr>
+      <tr><td>Dental Focus</td><td>Yes</td><td>Partial</td><td>Yes</td><td>100% dental-native</td></tr>
+      <tr><td>PMS Integration</td><td>Limited</td><td>Limited</td><td>Unknown</td><td>10+ via NexHealth</td></tr>
+      <tr><td>Compliance</td><td>HIPAA</td><td>Unclear</td><td>Basic</td><td>HIPAA + A2P + KMS</td></tr>
+      <tr><td>Founder</td><td>Engineers (MIT/Harvard)</td><td>Tech-led</td><td>Family practice</td><td>Built &amp; sold $1.3M practice</td></tr>
+      <tr><td>Conversation Flow</td><td>Unknown</td><td>Basic</td><td>Unknown</td><td>22 nodes, 74 edges, 9 tools</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout">Arini's founders are engineers who went door-to-door to learn dental. We didn't learn it. We lived it. And we serve both integrated and standalone practices at half the price, leaving no segment of the market unaddressed.</div>
+  <div class="page-num">10 / 16</div>
+</div>
+
+<!-- SLIDE 11: MOAT -->
+<div class="slide">
+  <img src="assets/logo.png" class="logo" alt="Enamly">
+  <div>
+    <div class="eyebrow">The Moat</div>
+    <h1>A Competitor Can Build a Voice Agent.<br>They Can't Build <span class="grad-text">What a Dentist Encoded.</span></h1>
+    <div class="accent-bar"></div>
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;">
+    <div class="card" style="padding: 40px 36px;">
+      <div style="font-size: 13px; color: var(--teal-2); font-weight: 800; letter-spacing: 3px; margin-bottom: 18px;">DOMAIN MOAT</div>
+      <div style="font-size: 28px; font-weight: 800; color: var(--text); margin-bottom: 20px; line-height: 1.25; letter-spacing: -0.5px;">Built by a dentist who lived the problem.</div>
+      <div style="font-size: 17px; color: var(--text-3); line-height: 1.65;">Every conversation node, every triage protocol, every cancellation save was designed by someone who ran a $1.3M practice. A 22-node flow built over 29 iterations from thousands of real patient calls. You can't outsource this.</div>
+    </div>
+    <div class="card" style="padding: 40px 36px;">
+      <div style="font-size: 13px; color: var(--teal-2); font-weight: 800; letter-spacing: 3px; margin-bottom: 18px;">DISTRIBUTION MOAT</div>
+      <div style="font-size: 28px; font-weight: 800; color: var(--text); margin-bottom: 20px; line-height: 1.25; letter-spacing: -0.5px;">Dual-mode serves the entire market.</div>
+      <div style="font-size: 17px; color: var(--text-3); line-height: 1.65;">Arini and Rondah only serve integrated practices, leaving 60% of the market on the table. Enamly is the only player serving both integrated and standalone, at half the price, opening every practice from solo doctors to multi-location DSOs.</div>
+    </div>
+    <div class="card" style="padding: 40px 36px;">
+      <div style="font-size: 13px; color: var(--teal-2); font-weight: 800; letter-spacing: 3px; margin-bottom: 18px;">PLATFORM MOAT</div>
+      <div style="font-size: 28px; font-weight: 800; color: var(--text); margin-bottom: 20px; line-height: 1.25; letter-spacing: -0.5px;">Voice is infrastructure. We are the application.</div>
+      <div style="font-size: 17px; color: var(--text-3); line-height: 1.65;">If Retell raises prices or shuts down, our 22-node flow, PMS integrations, and call QA pipeline port to Vapi or Bland in weeks. The dental intelligence layer is the moat. The voice provider is interchangeable.</div>
+    </div>
+  </div>
+
+  <div class="callout">PMS companies build scheduling software, not voice AI. Big AI labs build horizontal models, not vertical workflows. The space between is where Enamly lives.</div>
+  <div class="page-num">11 / 16</div>
+</div>
+
+<!-- SLIDE 12: BUSINESS MODEL -->
+<div class="slide">
+  <img src="assets/logo.png" class="logo" alt="Enamly">
+  <div>
+    <div class="eyebrow">Business Model</div>
+    <h1>SaaS Pricing with<br><span class="grad-text">89% Gross Margins.</span></h1>
+    <div class="accent-bar"></div>
+  </div>
+
+  <div style="display: flex; gap: 48px; align-items: stretch;">
+    <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+      <table class="vs-table">
+        <thead>
+          <tr>
+            <th style="text-align: left; border-radius: 12px 0 0 0;"></th>
+            <th style="background: rgba(20,184,166,0.15); color: var(--teal-2); border-radius: 0 12px 0 0;">Integrated</th>
+            <th>Standalone</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Monthly</td><td style="color: var(--teal-2); font-weight: 800;">$499/mo</td><td>$299/mo</td></tr>
+          <tr><td>Annual</td><td style="color: var(--teal-2); font-weight: 800;">$399/mo</td><td>$199/mo</td></tr>
+          <tr><td>Setup Fee</td><td style="color: var(--teal-2); font-weight: 800;">$799 ($499 sign-today)</td><td>$499 ($299 sign-today)</td></tr>
+          <tr><td>What's Included</td><td style="color: var(--teal-2); font-weight: 700; font-size: 15px;">Real-time PMS booking, patient lookup, reschedule</td><td style="font-size: 15px;">SMS + email scheduling links, staff task creation</td></tr>
+        </tbody>
+      </table>
+      <div style="margin-top: 24px; padding: 20px 28px; background: rgba(20,184,166,0.06); border-left: 3px solid var(--teal); border-radius: 8px; font-size: 18px; color: var(--text-2); line-height: 1.5;">No contract. Cancel anytime. 30-day money-back guarantee on the first month of subscription.</div>
+    </div>
+    <div style="flex: 0 0 500px;">
+      <div class="card-highlight" style="padding: 36px;">
+        <div style="font-size: 14px; color: var(--teal-2); font-weight: 800; letter-spacing: 3px; margin-bottom: 24px;">UNIT ECONOMICS</div>
+        <div style="display: flex; flex-direction: column; gap: 0;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; padding: 16px 0; border-bottom: 1px solid rgba(20,184,166,0.2);">
+            <div style="font-size: 17px; color: var(--text-3);">Avg Revenue / Practice</div>
+            <div style="font-size: 26px; font-weight: 800; color: var(--text);">$360/mo</div>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: baseline; padding: 16px 0; border-bottom: 1px solid rgba(20,184,166,0.2);">
+            <div style="font-size: 17px; color: var(--text-3);">COGS / Practice</div>
+            <div style="font-size: 26px; font-weight: 800; color: var(--text);">~$38/mo</div>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: baseline; padding: 16px 0; border-bottom: 1px solid rgba(20,184,166,0.2);">
+            <div style="font-size: 17px; color: var(--text-3);">Gross Margin</div>
+            <div style="font-size: 26px; font-weight: 800;" class="grad-text">~89%</div>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: baseline; padding: 16px 0; border-bottom: 1px solid rgba(20,184,166,0.2);">
+            <div style="font-size: 17px; color: var(--text-3);">Total Monthly Burn</div>
+            <div style="font-size: 26px; font-weight: 800; color: var(--text);">~$815</div>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: baseline; padding: 16px 0; border-bottom: 1px solid rgba(20,184,166,0.2);">
+            <div style="font-size: 17px; color: var(--text-3);">Payback Period</div>
+            <div style="font-size: 26px; font-weight: 800; color: var(--text);">&lt; 1 month</div>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: baseline; padding: 16px 0 0;">
+            <div style="font-size: 17px; color: var(--text-3);">ROI for Practice</div>
+            <div style="font-size: 32px; font-weight: 900;" class="grad-text">26x</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="page-num">12 / 16</div>
+</div>
+
+<!-- SLIDE 13: GTM -->
+<div class="slide">
+  <img src="assets/logo.png" class="logo" alt="Enamly">
+  <div>
+    <div class="eyebrow">Go-to-Market</div>
+    <h1>Four Channels.<br><span class="grad-text">85% Close Rate.</span></h1>
+    <div class="accent-bar"></div>
+    <div style="font-size: 22px; color: var(--text-2); line-height: 1.55; margin-top: 22px; max-width: 1700px;">Founder-led sales today. Repeatable, automated, and ready to scale with the first sales hire and the DSO channel.</div>
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;">
+    <div class="card" style="padding: 32px;">
+      <div class="agent-icon" style="margin: 0 0 20px 0;">&#128241;</div>
+      <div style="font-size: 22px; font-weight: 700; color: var(--text); margin-bottom: 12px;">Content + Social</div>
+      <div style="font-size: 15px; color: var(--text-3); line-height: 1.55;">50K+ followers across Instagram, TikTok, LinkedIn, X. Founder-led content drives inbound interest from practice owners. Near-zero CAC.</div>
+    </div>
+    <div class="card" style="padding: 32px;">
+      <div class="agent-icon" style="margin: 0 0 20px 0;">&#9993;</div>
+      <div style="font-size: 22px; font-weight: 700; color: var(--text); margin-bottom: 12px;">Automated Outreach</div>
+      <div style="font-size: 15px; color: var(--text-3); line-height: 1.55;">AI agents run LinkedIn and cold email campaigns on a schedule, targeting practices by geography and size. Fully automated pipeline.</div>
+    </div>
+    <div class="card" style="padding: 32px;">
+      <div class="agent-icon" style="margin: 0 0 20px 0;">&#128202;</div>
+      <div style="font-size: 22px; font-weight: 700; color: var(--text); margin-bottom: 12px;">Meta Ads</div>
+      <div style="font-size: 15px; color: var(--text-3); line-height: 1.55;">Conversion-optimized landing page at enamly.ai/lp with video testimonials. Pixel installed. Driving demo bookings at scale.</div>
+    </div>
+    <div class="card" style="padding: 32px;">
+      <div class="agent-icon" style="margin: 0 0 20px 0;">&#127942;</div>
+      <div style="font-size: 22px; font-weight: 700; color: var(--text); margin-bottom: 12px;">Events + Conferences</div>
+      <div style="font-size: 15px; color: var(--text-3); line-height: 1.55;">Booth and speaking presence at NDA, ADA, AGD, and DSO innovation days. Direct face time with practice owners and multi-location operators.</div>
+    </div>
+  </div>
+
+  <div class="card-highlight" style="padding: 32px 44px; display: flex; justify-content: space-between; align-items: center;">
+    <div>
+      <div style="font-size: 13px; color: var(--teal-2); font-weight: 800; letter-spacing: 3px; text-transform: uppercase;">Sales Motion</div>
+      <div style="font-size: 26px; font-weight: 800; color: var(--text); margin-top: 8px; letter-spacing: -0.3px;">Founder-Led Sales &rarr; Repeatable DSO Process</div>
+    </div>
+    <div style="display: flex; gap: 56px;">
+      <div style="text-align: center;"><div class="stat-big" style="font-size: 44px;">85%</div><div style="font-size: 13px; color: var(--text-3); margin-top: 6px;">Close Rate</div></div>
+      <div style="width: 1px; background: rgba(255,255,255,0.15);"></div>
+      <div style="text-align: center;"><div class="stat-big" style="font-size: 44px;">~$0</div><div style="font-size: 13px; color: var(--text-3); margin-top: 6px;">Current CAC</div></div>
+      <div style="width: 1px; background: rgba(255,255,255,0.15);"></div>
+      <div style="text-align: center;"><div class="stat-big" style="font-size: 44px;">48hrs</div><div style="font-size: 13px; color: var(--text-3); margin-top: 6px;">Onboarding</div></div>
+    </div>
+  </div>
+  <div class="page-num">13 / 16</div>
+</div>
+
+<!-- SLIDE 14: FOUNDER -->
+<div class="slide">
+  <img src="assets/logo.png" class="logo" alt="Enamly">
+  <div style="display: flex; gap: 70px; align-items: center; flex: 1;">
+    <div style="flex: 0 0 460px; display: flex; flex-direction: column; align-items: center;">
+      <div style="width: 460px; height: 600px; border-radius: 22px; overflow: hidden; border: 4px solid transparent; background: linear-gradient(135deg, var(--teal), var(--cyan)) border-box; box-shadow: 0 30px 80px rgba(20,184,166,0.3);">
+        <img src="assets/founder-family.jpeg" alt="Dr. Bethel Ozumba" style="width: 100%; height: 100%; object-fit: cover; border-radius: 18px;">
+      </div>
+    </div>
+    <div style="flex: 1;">
+      <div class="eyebrow">Founder</div>
+      <h1 style="font-size: 58px;">I've Never Waited<br>for Anyone to <span class="grad-text">Come Save Me.</span></h1>
+      <div class="accent-bar"></div>
+      <div style="margin-top: 28px; display: flex; flex-direction: column; gap: 16px;">
+        <div style="display: flex; gap: 20px; align-items: flex-start;">
+          <div style="flex: 0 0 16px; width: 16px; height: 16px; background: linear-gradient(135deg, var(--teal), var(--cyan)); border-radius: 50%; margin-top: 8px; box-shadow: 0 0 12px rgba(20,184,166,0.5);"></div>
+          <div style="font-size: 22px; color: var(--text-2); line-height: 1.5;">Came to America from Nigeria at <strong class="teal">age 8</strong>. Didn't speak English.</div>
+        </div>
+        <div style="display: flex; gap: 20px; align-items: flex-start;">
+          <div style="flex: 0 0 16px; width: 16px; height: 16px; background: linear-gradient(135deg, var(--teal), var(--cyan)); border-radius: 50%; margin-top: 8px; box-shadow: 0 0 12px rgba(20,184,166,0.5);"></div>
+          <div style="font-size: 22px; color: var(--text-2); line-height: 1.5;">First doctor in my family. Howard University, <strong class="teal">DDS with Honors</strong>.</div>
+        </div>
+        <div style="display: flex; gap: 20px; align-items: flex-start;">
+          <div style="flex: 0 0 16px; width: 16px; height: 16px; background: linear-gradient(135deg, var(--teal), var(--cyan)); border-radius: 50%; margin-top: 8px; box-shadow: 0 0 12px rgba(20,184,166,0.5);"></div>
+          <div style="font-size: 22px; color: var(--text-2); line-height: 1.5;">Built a dental practice to <strong class="teal">$1.3M in year one</strong> working three days a week.</div>
+        </div>
+        <div style="display: flex; gap: 20px; align-items: flex-start;">
+          <div style="flex: 0 0 16px; width: 16px; height: 16px; background: linear-gradient(135deg, var(--teal), var(--cyan)); border-radius: 50%; margin-top: 8px; box-shadow: 0 0 12px rgba(20,184,166,0.5);"></div>
+          <div style="font-size: 22px; color: var(--text-2); line-height: 1.5;">Sold the practice. Taught myself to code when developers I hired couldn't deliver.</div>
+        </div>
+        <div style="display: flex; gap: 20px; align-items: flex-start;">
+          <div style="flex: 0 0 16px; width: 16px; height: 16px; background: linear-gradient(135deg, var(--teal), var(--cyan)); border-radius: 50%; margin-top: 8px; box-shadow: 0 0 12px rgba(20,184,166,0.5);"></div>
+          <div style="font-size: 22px; color: var(--text-2); line-height: 1.5;">Built the entire product, dashboard, integrations, and 16 AI agents <strong class="teal">solo</strong>.</div>
+        </div>
+        <div style="display: flex; gap: 20px; align-items: flex-start;">
+          <div style="flex: 0 0 16px; width: 16px; height: 16px; background: linear-gradient(135deg, var(--teal), var(--cyan)); border-radius: 50%; margin-top: 8px; box-shadow: 0 0 12px rgba(20,184,166,0.5);"></div>
+          <div style="font-size: 22px; color: var(--text-2); line-height: 1.5;"><strong class="teal">NDA 40 Under 40</strong> (2025). 50K+ social audience.</div>
+        </div>
+      </div>
+      <div class="callout" style="margin-top: 32px; font-size: 22px; font-style: italic; font-weight: 600;">Ten practices. 10,000+ calls. Zero churn. Cash-flow positive. Built by one person with AI.</div>
+    </div>
+  </div>
+  <div class="page-num">14 / 16</div>
+</div>
+
+<!-- SLIDE 15: VISION -->
+<div class="slide">
+  <img src="assets/logo.png" class="logo" alt="Enamly">
+  <div>
+    <div class="eyebrow">Vision</div>
+    <h1>The AI Phone Layer<br>for <span class="grad-text">All of Healthcare.</span></h1>
+    <div class="accent-bar"></div>
+    <div style="font-size: 22px; color: var(--text-2); line-height: 1.55; margin-top: 24px; max-width: 1700px;">Dental is the beachhead. The same architecture (voice AI + PMS integration + conversation intelligence) works across every healthcare vertical that runs on phone calls.</div>
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;">
+    <div class="card-highlight" style="padding: 36px 32px; position: relative;">
+      <div style="position: absolute; top: -12px; left: 24px; background: linear-gradient(135deg, var(--teal), var(--cyan)); padding: 4px 14px; border-radius: 999px; font-size: 12px; font-weight: 800; color: var(--bg-2); letter-spacing: 1px; text-transform: uppercase;">Now</div>
+      <div style="font-size: 13px; color: var(--teal-2); font-weight: 800; letter-spacing: 2.5px; margin-top: 12px;">YEAR 1</div>
+      <div style="font-size: 28px; font-weight: 800; color: var(--text); margin-top: 10px;">Own Dental</div>
+      <div style="font-size: 16px; color: var(--text-2); margin-top: 16px; line-height: 1.55;">1,000+ practices. $5.4M ARR. First 3 DSO contracts. Repeatable enterprise sales motion.</div>
+    </div>
+    <div class="card" style="padding: 36px 32px;">
+      <div style="font-size: 13px; color: var(--teal-2); font-weight: 800; letter-spacing: 2.5px;">YEAR 2</div>
+      <div style="font-size: 28px; font-weight: 800; color: var(--text); margin-top: 10px;">Scale Dental</div>
+      <div style="font-size: 16px; color: var(--text-3); margin-top: 16px; line-height: 1.55;">3,000+ practices. $15M+ ARR. Platform features: insurance verification, outbound reactivation, reviews.</div>
+    </div>
+    <div class="card" style="padding: 36px 32px;">
+      <div style="font-size: 13px; color: var(--teal-2); font-weight: 800; letter-spacing: 2.5px;">YEAR 3</div>
+      <div style="font-size: 28px; font-weight: 800; color: var(--text); margin-top: 10px;">Expand Healthcare</div>
+      <div style="font-size: 16px; color: var(--text-3); margin-top: 16px; line-height: 1.55;">Medical, optometry, veterinary. Same architecture, new conversation flows. Multi-vertical AI phone platform.</div>
+    </div>
+    <div class="card" style="padding: 36px 32px;">
+      <div style="font-size: 13px; color: var(--teal-2); font-weight: 800; letter-spacing: 2.5px;">YEAR 5</div>
+      <div style="font-size: 28px; font-weight: 800; color: var(--text); margin-top: 10px;">Healthcare OS</div>
+      <div style="font-size: 16px; color: var(--text-3); margin-top: 16px; line-height: 1.55;">10,000+ practices. $50M+ ARR. The AI front desk for every healthcare practice in America.</div>
+    </div>
+  </div>
+
+  <div class="callout" style="text-align: center; font-size: 28px; font-weight: 700;">From phone calls to a dental operating system. <span class="grad-text">Then all of healthcare.</span></div>
+  <div class="page-num">15 / 16</div>
+</div>
+
+<!-- SLIDE 16: ASK -->
+<div class="slide" style="padding-bottom: 140px;">
+  <img src="assets/logo.png" class="logo" alt="Enamly">
+  <div style="display: flex; gap: 80px; align-items: center; flex: 1;">
+    <div style="flex: 1;">
+      <div class="eyebrow">The Ask</div>
+      <h1 style="font-size: 72px;">Raising <span class="grad-text">$1.5&ndash;2M Seed.</span></h1>
+      <div class="accent-bar"></div>
+      <div class="card-highlight" style="padding: 28px 36px; margin-top: 28px;">
+        <div style="font-size: 13px; color: var(--teal-2); font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase;">12-Month Plan</div>
+        <div style="font-size: 26px; margin-top: 12px; line-height: 1.4; font-weight: 800;" class="grad-text">1,000 practices &nbsp;&middot;&nbsp; $450K MRR &nbsp;&middot;&nbsp; $5.4M ARR &nbsp;&middot;&nbsp; 3 DSO contracts</div>
+      </div>
+      <div style="font-size: 13px; color: var(--text-3); margin-top: 32px; margin-bottom: 4px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase;">Use of Funds</div>
+      <ul class="ask-list">
+        <li><div class="ask-num">1</div><span class="ask-highlight">Distribution.</span> Paid acquisition, podcast tours, association sponsorships, and PMS marketplace placement.</li>
+        <li><div class="ask-num">2</div><span class="ask-highlight">Enterprise GTM.</span> First sales hire plus DSO channel strategy to convert multi-location contracts.</li>
+        <li style="border-bottom: none;"><div class="ask-num">3</div><span class="ask-highlight">Platform depth.</span> Second engineer to scale from 10 to 1,000+ practices without breaking the $800/mo burn advantage.</li>
+      </ul>
+    </div>
+    <div style="flex: 0 0 400px; display: flex; flex-direction: column; align-items: center; gap: 24px;">
+      <div class="headshot-circle" style="width: 320px; height: 320px;">
+        <img src="assets/dr-bbay.jpg" alt="Dr. Bethel Ozumba">
+      </div>
+      <div style="text-align: center;">
+        <div style="font-size: 28px; font-weight: 800; letter-spacing: -0.5px;">Dr. Bethel Ozumba</div>
+        <div style="font-size: 17px; color: var(--text-4); margin-top: 6px; font-weight: 500;">Founder &amp; CEO</div>
+      </div>
+      <div class="card" style="padding: 18px 28px; text-align: center;">
+        <div style="font-size: 12px; color: var(--text-3); font-weight: 800; letter-spacing: 2px; text-transform: uppercase;">Delaware C-Corp</div>
+        <div style="font-size: 14px; margin-top: 8px; font-weight: 800;" class="grad-text">Cash-Flow Positive &middot; 89% Gross Margin</div>
+      </div>
+    </div>
+  </div>
+  <div class="contact-bar">
+    <div>info@enamly.ai</div>
+    <div>enamly.ai</div>
+    <div>Demo: (346) 608-9855</div>
+    <div>@dr.b_bay &middot; 50K+ followers</div>
+  </div>
+  <div class="page-num" style="color: rgba(10,15,28,0.6); bottom: 88px;">16 / 16</div>
+</div>
+
+</div>
+</div>
+
+<!-- Progress dots -->
+<div class="progress-dots" id="progressDots"></div>
+
+<script>
+  (function() {
+    const deck = document.querySelector('.deck');
+    const wrapper = document.querySelector('.deck-wrapper');
+    const slideCount = document.querySelectorAll('.slide').length;
+
+    // Build progress dots
+    const dotsEl = document.getElementById('progressDots');
+    for (let i = 0; i < slideCount; i++) {
+      const d = document.createElement('div');
+      d.className = 'dot';
+      dotsEl.appendChild(d);
+    }
+    const dots = dotsEl.querySelectorAll('.dot');
+
+    function fit() {
+      // Scale to fit viewport width, allow up-scaling on wider screens (cap at 1.25x)
+      const scale = Math.min(window.innerWidth / 1920, 1.25);
+      deck.style.transform = 'scale(' + scale + ')';
+      wrapper.style.width = (1920 * scale) + 'px';
+      wrapper.style.height = (1080 * slideCount * scale) + 'px';
+    }
+    fit();
+    window.addEventListener('resize', fit);
+
+    // Track active slide via scroll position
+    function updateActive() {
+      const scale = Math.min(window.innerWidth / 1920, 1.25);
+      const slideHeight = 1080 * scale;
+      const index = Math.min(
+        slideCount - 1,
+        Math.max(0, Math.floor((window.scrollY + window.innerHeight / 2) / slideHeight))
+      );
+      dots.forEach((d, i) => d.classList.toggle('active', i === index));
+    }
+    updateActive();
+    window.addEventListener('scroll', updateActive, { passive: true });
+    window.addEventListener('resize', updateActive);
+  })();
+</script>
+
+</body>
+</html>
