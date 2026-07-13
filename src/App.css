@@ -124,13 +124,21 @@
 .ge-final .ge-btn{position:relative;}
 
 /* FOOTER */
-.ge-footer{background:var(--ink);color:#AEB8B2;padding:44px 0 34px;margin-top:10px;}
-.ge-foot-in{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:flex-start;}
-.ge-footer .ge-brand img{height:26px;}
-.ge-foot-contact{font-size:12.5px;color:#8C978F;line-height:1.6;margin-top:12px;}
-.ge-foot-links{display:flex;gap:20px;font-size:13.5px;}
-.ge-foot-links a:hover{color:#fff;}
-.ge-foot-bot{border-top:1px solid rgba(255,255,255,.1);margin-top:26px;padding-top:20px;font-size:12px;color:#7E8983;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+.ge-footer{background:var(--ink);color:#AEB8B2;padding:52px 0 34px;margin-top:10px;}
+.ge-foot-top{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;align-items:flex-start;}
+.ge-foot-brand img{height:34px;width:auto;}
+.ge-foot-tagline{font-family:'Hanken Grotesk';font-weight:600;font-style:italic;font-size:17px;color:var(--teal);margin-top:16px;}
+.ge-foot-sub{font-size:13.5px;color:#8C978F;margin-top:4px;}
+.ge-foot-contact h4{font-family:'Hanken Grotesk';color:#fff;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;margin-bottom:14px;}
+.ge-foot-contact a{display:block;font-size:14px;color:#AEB8B2;margin-bottom:9px;}
+.ge-foot-contact a:hover{color:#fff;}
+.ge-socials{display:flex;gap:10px;margin-top:16px;}
+.ge-socials a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:#AEB8B2;transition:.2s;}
+.ge-socials a:hover{background:rgba(20,184,166,.2);color:var(--teal);border-color:rgba(20,184,166,.3);}
+.ge-socials svg{width:16px;height:16px;}
+.ge-foot-bot{border-top:1px solid rgba(255,255,255,.1);margin-top:34px;padding-top:22px;font-size:12px;color:#7E8983;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+.ge-foot-bot a{color:#7E8983;}.ge-foot-bot a:hover{color:#fff;}
+.ge-dot{margin:0 3px;}
 
 @media (max-width:900px){
   .ge-wrap{padding:0 22px;}
