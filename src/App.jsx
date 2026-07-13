@@ -1,22 +1,9 @@
 import './App.css';
 import { Link } from 'react-router-dom';
-import { useEffect } from 'react';
 
 const GHL_FORM = "https://api.leadconnectorhq.com/widget/form/Kw3nQ2ZYmngKS06aDVNA";
 
 export default function App() {
-  useEffect(() => {
-    // Load GoHighLevel form embed script (handles iframe auto-resize)
-    const id = "ghl-form-embed";
-    if (!document.getElementById(id)) {
-      const s = document.createElement("script");
-      s.id = id;
-      s.src = "https://link.msgsndr.com/js/form_embed.js";
-      s.async = true;
-      document.body.appendChild(s);
-    }
-  }, []);
-
   const scrollToBook = () => {
     const el = document.getElementById("book");
     if (el) {
@@ -63,17 +50,8 @@ export default function App() {
             <p className="ge-fh-sub">15 minutes. No slides. We show you your missed-call revenue live.</p>
             <iframe
               src={GHL_FORM}
-              id="inline-Kw3nQ2ZYmngKS06aDVNA"
-              data-layout="{'id':'INLINE'}"
-              data-trigger-type="alwaysShow"
-              data-activation-type="alwaysActivated"
-              data-deactivation-type="neverDeactivate"
-              data-form-name="Demo Form - Enamly"
-              data-height="560"
-              data-layout-iframe-id="inline-Kw3nQ2ZYmngKS06aDVNA"
-              data-form-id="Kw3nQ2ZYmngKS06aDVNA"
               title="Book a Demo - Enamly"
-              style={{ width: "100%", height: "560px", border: "none", borderRadius: "12px", background: "transparent" }}
+              style={{ width: "100%", height: "720px", border: "none", borderRadius: "12px", background: "transparent" }}
             />
             <p className="ge-consent">
               By submitting, you agree to receive messages from Enamly Inc. Msg &amp; data rates may apply. Reply STOP to opt out.{" "}
