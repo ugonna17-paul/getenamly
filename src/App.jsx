@@ -162,7 +162,7 @@ export default function App() {
             </div>
             <div className="ge-foot-contact">
               <h4>Contact</h4>
-              <a href="mailto:info@enamly.ai">info@enamly.ai</a>
+              <a href="mailto:team@getenamly.com">team@getenamly.com</a>
               <a href="tel:3466089855">(346) 608-9855</a>
               <div className="ge-socials">
                 {SOCIALS.map((s) => (
